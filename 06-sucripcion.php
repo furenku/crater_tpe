@@ -1,0 +1,4 @@
+<?php
+/*
+Template Name: Suscripción
+*/
