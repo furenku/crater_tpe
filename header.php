@@ -19,7 +19,7 @@
 
    </section>
 
-   
+
    <!-- header#cabecera.row.expanded.h_10vh -->
    <header id="cabecera" class="row expanded h_10vh">
 
@@ -41,10 +41,7 @@
 
 
 
-      <!-- aside#menu.columns.small-12.medium-3.large-2 -->
-      <aside id="menu" class="columns small-12 medium-3 large-2">
-         Menú
-      </aside>
+
 
       <!-- main#principal.columns.small-12.medium-9.large-10 -->
       <main id="principal" class="columns small-12 medium-9 large-10">
