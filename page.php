@@ -32,6 +32,7 @@ function mostrar_hijas( $pagina ) {
    $ID = $pagina -> ID;
    $titulo = apply_filters( 'the_title', $pagina -> post_title );
    $contenido = apply_filters( 'the_content', $pagina -> post_content );
+   $extracto = apply_filters( 'the_excerpt', $pagina -> post_excerpt );
 
    $profundidad = 0;
 
@@ -69,9 +70,10 @@ function mostrar_hijas( $pagina ) {
       }
 
    }
+
    ?>
 
-   <article class="columns <?php echo $columnas; ?> p5">
+   <article class="columns <?php echo $columnas; ?> p5 h_100 rel">
 
    <?php
 
@@ -83,68 +85,96 @@ function mostrar_hijas( $pagina ) {
 
    ?>
 
-
-   <?php
-
-   $columnas_internas = "";
-
-   switch ($profundidad) {
-      // case 0:
-      //
-      //    $tamanno = 'full';
-      //
-      //    break;
-      case 1:
-         $columnas_internas = "medium-6";
-         $tamanno = 'large';
-         break;
-      case 2:
-         $tamanno = 'medium';
-         break;
-
-      default:
-         $tamanno = 'thumb';
-         break;
-   }
-
-   $img = get_the_post_thumbnail($pagina->ID, $tamanno );
-
-   if( $img ) {
-   ?>
-
-      <section class="imagen p0 text-center columns <?php echo $columnas_internas; ?>">
-         <?php echo $img; ?>
-      </section>
-
-   <?php
-   } else {
-      if( $profundidad == 1 )
-         $columnas_internas = "medium-8 medium-offset-2 end";
-   }
-
-   ?>
-
-   <section class="contenido p5 columns <?php echo $columnas_internas; ?>">
-      <?php echo $contenido; ?>
-   </section>
-
-
-   </article>
-
-   <section id="paginas_hijas">
+   <div class="pagina_hija-imagen-extracto p0 m0 <?php echo $profundidad == 2 ? " h_30vh " : ""; ?>">
+      <!-- <div class="vcenter h_a p0 "> -->
 
 
          <?php
 
-         foreach( $paginas_hijas as $pagina_hija ) {
+         $columnas_internas = "";
 
-            mostrar_hijas( $pagina_hija );
+         switch ($profundidad) {
+            // case 0:
+            //
+            //    $tamanno = 'full';
+            //
+            //    break;
+            case 1:
+               $columnas_internas = "medium-6";
+               $tamanno = 'large';
+               break;
+            case 2:
+               $tamanno = 'large';
+               break;
 
+            default:
+               $tamanno = 'medium';
+               break;
          }
+
+         $img = get_the_post_thumbnail($pagina->ID, $tamanno );
+
+         if( $img ) :
+            $clases_img = "";
+            if( $profundidad == 2 ) :
+               $clases_img = " imagen_fondo_fx1 absUpL z-1 h_100 w_100 imgLiquid imgLiquidFill";
+            else :
+               $clases_img = " h_a ";
+            endif;
 
          ?>
 
-   </section>
+            <section class="imagen columns <?php echo $columnas_internas; ?>  p0 text-center <?php echo $clases_img; ?>">
+               <?php echo $img; ?>
+            </section>
+
+         <?php
+         else :
+
+            if( $profundidad == 1 )
+               $columnas_internas = "medium-10 large-8 medium-offset-1 large-offset-2 end";
+
+         endif;
+
+         ?>
+
+         <section class="extracto columns <?php echo $columnas_internas; ?> h_a p5">
+            <div class="vcenter h_a">
+               <?php echo $extracto; ?>
+            </div>
+         </section>
+
+      <!-- </div> -->
+      <!--.vcenter-->
+   </div><!--.pagina_hija-imagen-extracto-->
+
+
+   <?php if($profundidad < 2) : ?>
+
+      <section class="paginas_hijas columns small-12 h_100">
+
+         <?php foreach( $paginas_hijas as $pagina_hija ) {
+
+            mostrar_hijas( $pagina_hija );
+
+         } ?>
+
+      </section>
+
+      <section class="contenido columns h_a p5 medium-10 large-8 medium-offset-1 large-offset-2 end">
+         <?php echo $contenido; ?>
+      </section>
+
+   <?php else :  ?>
+
+      <a href="<?php echo get_the_permalink($ID); ?>" class="button enlace p5 small-12 columns">
+         Ir a página
+      </a>
+
+   <?php endif; ?>
+
+   </article>
+
 
    <?php
 

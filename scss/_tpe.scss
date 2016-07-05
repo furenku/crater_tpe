@@ -1,9 +1,40 @@
 * {
-   outline: 1px solid #0cf;
+   outline: 1px solid #effaff;
 }
 
 
 div, header, footer, article, section, aside {
    /*h100%*/
    height: 100%;
+}
+
+
+
+.contenido {
+
+   iframe, img {
+      width: 100%;
+      margin: $spacing * 2 0;
+   }
+
+}
+
+
+.imagen_fondo_fx1 {
+   filter: brightness(120%) contrast(110%);
+   opacity: 0.35;
+}
+
+
+h1,h2,h3,h4,h5,h6 {
+   font-family: 'Lato', sans-serif;
+}
+* {
+   font-family: 'Open Sans', sans-serif;
+}
+* {
+   font-weight: 400 !important;
+}
+h1,h2,h3,h4,h5,h6 {
+   font-weight: 100 !important;
 }

@@ -12,15 +12,18 @@
 <body>
 
    <!-- section#portada -->
-   <section id="portada">
+   <section id="portada" class="rel">
 
       <?php include_once 'secciones/01-portada/00-portada_variable.php'; ?>
-      <?php #get_template_part('secciones/01-portada/00-portada_variable'); ?>
+
+      <a href="#" id="menu-boton" class="absDownR hollow button fontXL text-center z1">
+         Menú
+      </a>
 
    </section>
 
-   
-   <!-- header#cabecera.row.expanded.h_10vh -->
+
+   <!-- header#cabecera.row.expanded.h_1a<link href='https://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>0vh -->
    <header id="cabecera" class="row expanded h_10vh">
 
       <!-- #cabecera-logotipo.columns.small-5.medium-4.large-3 -->
@@ -37,14 +40,7 @@
 
 
    <!-- #menu-y-principal.row.h_85vh.scroll_h -->
-   <div id="menu-y-principal" class="row expanded h_85vh scroll_h">
-
-
-
-      <!-- aside#menu.columns.small-12.medium-3.large-2 -->
-      <aside id="menu" class="columns small-12 medium-3 large-2">
-         Menú
-      </aside>
+   <div id="menu-y-principal" class="row expanded h_a">
 
       <!-- main#principal.columns.small-12.medium-9.large-10 -->
       <main id="principal" class="columns small-12 medium-9 large-10">

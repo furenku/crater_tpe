@@ -14,14 +14,14 @@ $paginas_hijas = get_pages( array( 'child_of' => $post->ID, 'parent' => $post->I
       <header class="h_20">
          <div class="vcenter h_a">
             <h1 class="m0 p0">
-               <?php echo $post->post_title; ?>
+               <?php echo apply_filters( 'the_title', $post->post_title ); ?>
             </h1>
          </div>
       </header>
 
       <section class="contenido h_50 columns medium-6">
          <div class="vcenter h_a pl4 pr4">
-            <?php echo $post->post_excerpt; ?>
+            <?php echo apply_filters( 'the_excerpt', $post->post_excerpt ); ?>
          </div>
       </section>
 
@@ -42,7 +42,7 @@ $paginas_hijas = get_pages( array( 'child_of' => $post->ID, 'parent' => $post->I
 
                      ?>
 
-                     <div class="h_a p5 medium-text-right">
+                     <div class="h_a p5">
                         <a href="<?php echo get_the_permalink( $pagina_hija -> ID ); ?>" class="w_100 h_100">
                            <?php echo apply_filters( 'the_title', $pagina_hija->post_title ); ?>
                         </a>

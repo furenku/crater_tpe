@@ -2,7 +2,7 @@
 
 function cargar_estilos() {
 
-   wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Ubuntu:700|PT+Sans' );
+   wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Lato:300,400|Open+Sans:400,300italic,300,400italic,600' );
 
    wp_enqueue_style( 'slick', get_stylesheet_directory_uri() . '/bower_components/slick-carousel/slick/slick.css' );
    wp_enqueue_style( 'slick-theme', get_stylesheet_directory_uri() . '/bower_components/slick-carousel/slick/slick-theme.css' );

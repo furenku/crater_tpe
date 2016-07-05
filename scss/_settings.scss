@@ -45,7 +45,7 @@
 // 1. Global
 // ---------
 
-$global-font-size: 100%;
+$global-font-size: 85%;
 $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
 $foundation-palette: (
@@ -113,15 +113,15 @@ $header-sizes: (
     'h3': 19,
     'h4': 18,
     'h5': 17,
-    'h6': 16,
+    'h6': 15,
   ),
   medium: (
-    'h1': 48,
-    'h2': 40,
-    'h3': 31,
-    'h4': 25,
-    'h5': 20,
-    'h6': 16,
+    'h1': 35,
+    'h2': 29,
+    'h3': 24,
+    'h4': 20,
+    'h5': 17,
+    'h6': 15,
   ),
 );
 $header-color: inherit;
