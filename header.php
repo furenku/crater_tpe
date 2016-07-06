@@ -30,50 +30,10 @@
 
             <!-- #cabecera-titular.columns.small-7.medium-8.large-9 -->
             <div id="cabecera-titular" class="columns small-7 medium-6 large-7">
-               <?php
-               if( is_page('Catálogo') ) {
-                  ?>
-                     <nav id="ecommerce-nav">
-                        <ul>
 
-                           <a href="#">
-                              <li class="columns medium-3 fontXXS">
-                                 <div class="etiqueta columns small-8">
-                                    Carrito
-                                 </div>
-                                 <div class="total columns small-4">
-                                    $99999.99
-                                 </div>
-                              </li>
-                           </a>
+               <?php if( is_page('Catálogo') )
+                     get_template_part('secciones/00-general/menu-ecommerce'); ?>
 
-
-
-                           <a href="#">
-                              <li class="columns medium-3 fontXXS">
-                                 Realizar pedido
-                              </li>
-                           </a>
-
-
-
-                           <a href="#">
-                              <li class="columns medium-3 fontXXS">
-                                 Mi cuenta
-                              </li>
-                           </a>
-
-                           <a href="#">
-                              <li class="columns medium-3 fontXXS">
-                                 Salir/Registrarse
-                              </li>
-                           </a>
-
-                        </ul>
-                     </nav>
-                  <?php
-               }
-               ?>
             </div>
 
             <div class="columns small-12 medium-3 large-2">
