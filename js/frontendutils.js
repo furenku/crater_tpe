@@ -7,35 +7,22 @@ function FrontEndUtils(){
 	}
 	this.vcenter = function( selector ) {
 
-
 		if (typeof(selector)==='undefined')
-			selector = '.vcenter';
+		selector = '.vcenter';
 
+		$( selector ).each(function(){
+			item = $(this);
+			p = item.parent();
+			mT = ( p.height() - item.height() ) / 2;
+			item.css({ marginTop: mT, opacity: 1 });
 
-			$( selector ).each(function(){
-				var do_vcenter = true;
-
-				if( $(this).hasClass(".vcenter_lg") && $(window).width()<=1024 ) {
-					do_vcenter = false;
-				}
-				if( do_vcenter ) {
-
-					item = $(this);
-					p = item.parent();
-					mT = ( p.height() - item.height() ) / 2;
-					item.css({ marginTop: mT, opacity: 1 });
-
-				;}
-
-			})
-
-
+		})
 	}
 
 	this.square = function( selector ) {
 
 		if (typeof(selector)==='undefined')
-			selector = '.square';
+		selector = '.square';
 
 		$( selector ).each(function(){
 
@@ -57,7 +44,7 @@ function FrontEndUtils(){
 	this.squareH = function( selector ) {
 
 		if (typeof(selector)==='undefined')
-			selector = '.squareH';
+		selector = '.squareH';
 
 		$( selector ).each(function(){
 			$(this).height( $(this).outerWidth() );
@@ -68,7 +55,7 @@ function FrontEndUtils(){
 	this.squareW = function( selector ) {
 
 		if (typeof(selector)==='undefined')
-			selector = '.squareW';
+		selector = '.squareW';
 
 		$( selector ).each(function(){
 			$(this).width( $(this).outerHeight() );
@@ -79,29 +66,29 @@ function FrontEndUtils(){
 	this.shareW = function( selector ) {
 
 		if (typeof(selector)==='undefined')
-			selector = '.shareW';
+		selector = '.shareW';
 
 		$( selector ).each(function(){
-				// console.log( $(this).parent().css('paddingLeft') + $(this).parent().css('paddingRight') );
-				var totalW = ( $(this).parent().width() - 2 ) - ( parseInt($(this).parent().css('paddingLeft')) + parseInt($(this).parent().css('paddingRight'))) ;
-				var totalItems = $(this).siblings().length + 1;
+			// console.log( $(this).parent().css('paddingLeft') + $(this).parent().css('paddingRight') );
+			var totalW = ( $(this).parent().width() - 2 ) - ( parseInt($(this).parent().css('paddingLeft')) + parseInt($(this).parent().css('paddingRight'))) ;
+			var totalItems = $(this).siblings().length + 1;
 
-				var thisW = totalW / totalItems;
+			var thisW = totalW / totalItems;
 
-				$(this).css({
-					width: thisW,
-					float: 'left'
-				});
-
-
+			$(this).css({
+				width: thisW,
+				float: 'left'
 			});
+
+
+		});
 
 
 	}
 	this.shareH = function( selector ) {
 
 		if (typeof(selector)==='undefined')
-			selector = '.shareH';
+		selector = '.shareH';
 
 		$( selector ).each(function(){
 
@@ -138,41 +125,46 @@ function FrontEndUtils(){
 	}
 
 
-	this.resize = function() {
+	// this.resize = function() {
+	// 	fe.vcenter();
+	// 	fe.squareW();
+	// 	fe.squareH();
+	// 	fe.shareW();
+	// 	fe.shareH();
+	// }
+
+	// recalculate at resize
+	$(window).resize(function() {
 		fe.vcenter();
 		fe.squareW();
 		fe.squareH();
 		fe.shareW();
 		fe.shareH();
-
-	}
+	});
 
 
 
 	this.sameMaxH = function( elements ) {
-		
-		var maxH = 0;
+		var do_this = true;
 		elements.each(function(){
-			if( $(this).height() > maxH ){
-				maxH = $(this).height();
+			if( $(window).width() > 1024 && $(this).hasClass('noSameH_lg') ){
+				do_this = false;
 			}
 		})
+		if( do_this ) {
 
-		elements.height( maxH );
+			var maxH = 0;
+			elements.each(function(){
+				if( $(this).height() > maxH ){
+					maxH = $(this).height();
+				}
+			})
 
+			elements.height( maxH );
+		}
 
 	}
-	this.do_16_9 = function() {
-
-		$('.h_16_9').each(function(){
-			// console.log("W:",$(this).width() / (16/9))
-			$(this).height( $(this).width() / (16/9) );
-		});
-
-	}
-
 }
-
 
 
 // console.log( Utils )

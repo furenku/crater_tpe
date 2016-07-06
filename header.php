@@ -23,7 +23,6 @@
    </section>
 
 
-   <!-- header#cabecera.row.expanded.h_1a<link href='https://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>0vh -->
    <header id="cabecera" class="row expanded h_10vh">
 
       <!-- #cabecera-logotipo.columns.small-5.medium-4.large-3 -->
@@ -40,7 +39,9 @@
 
 
    <!-- #menu-y-principal.row.h_85vh.scroll_h -->
+
    <div id="menu-y-principal" class="row expanded h_a">
+
 
       <!-- main#principal.columns.small-12.medium-9.large-10 -->
       <main id="principal" class="columns small-12 medium-9 large-10">

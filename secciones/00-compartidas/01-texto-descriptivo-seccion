@@ -1,0 +1,15 @@
+<div id="texto-descriptivo-contenedor" class="columns p3 h_sm_25 h_md_20">
+
+  <div id="texto-descriptivo-texto" class="columns p0 h_80 text-center fontL">
+
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, cumque molestiae provident.
+
+  </div>
+  <div id="texto-descriptivo-boton" class="columns p0 h_20 align-center">
+
+    <button class="button hollow h_50 w_50 fontS">Ir a sección</button>
+
+  </div>
+
+
+</div>
