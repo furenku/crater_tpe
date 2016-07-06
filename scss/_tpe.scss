@@ -16,8 +16,12 @@ div, header, footer, article, section, aside {
 
 
 nav {
-   li {
-      list-style: none;
+   ul {
+      margin: 0;
+      padding: 0;
+      li {
+         list-style: none;
+      }
    }
 }
 
