@@ -15,6 +15,8 @@ $(document).ready(function(){
 
    interaccion_menu();
 
+   interaccion_productos();
+
 });
 
 
@@ -28,7 +30,7 @@ function interaccion_menu() {
 
          $('#menu').animate({
 
-            marginTop: ( $(window).height() * -1 )
+            marginTop: ( ( $(window).height() - $('#cabecera').height() ) * -1 )
 
          }, function(){
 
@@ -86,4 +88,12 @@ function interaccion_menu() {
 
    })
 
+}
+
+
+function interaccion_productos() {
+   $('.publicacion-comprar').click(function(){
+      alert( $(this).parent().parent().parent().data('id') )
+      return false;
+   })
 }

@@ -1,7 +1,11 @@
 * {
-   outline: 1px solid #dfeaff;
+   outline: 1px solid #effaff;
 }
 
+
+body {
+   overflow-x: hidden;
+}
 
 div, header, footer, article, section, aside {
    /*h100%*/
@@ -46,4 +50,14 @@ h1,h2,h3,h4,h5,h6 {
 
 #menu-boton {
    transition: display 0.3s;
+}
+
+
+
+#portada {
+   height: calc(100vh - 3em);
+}
+
+.h_3em {
+   height: 3em;
 }
