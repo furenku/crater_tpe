@@ -16,10 +16,6 @@
 
       <?php include_once 'secciones/01-portada/00-portada_variable.php'; ?>
 
-      <a href="#" id="menu-boton" class="absDownR hollow button fontXL text-center z1">
-         Menú
-      </a>
-
    </section>
 
    <div id="area-stickies" class="row expanded h_a">
@@ -33,8 +29,47 @@
             </div>
 
             <!-- #cabecera-titular.columns.small-7.medium-8.large-9 -->
-            <div id="cabecera-titular" class="columns small-7 medium-9 large-10">
-               Titular
+            <div id="cabecera-titular" class="columns small-7 medium-6 large-7">
+               <?php
+               if( is_page('Catálogo') ) {
+                  ?>
+                     <nav id="ecommerce-nav">
+                        <ul>
+
+                           <li class="columns medium-3 fontXXS">
+                              <div class="etiqueta columns small-8">
+                                 Carrito
+                              </div>
+                              <div class="total columns small-4">
+                                 $99999.99
+                              </div>
+                           </li>
+
+
+                           <li class="columns medium-3 fontXXS">
+                              Realizar pedido
+                           </li>
+
+
+                           <li class="columns medium-3 fontXXS">
+                              Mi cuenta
+                           </li>
+
+                           <li class="columns medium-3 fontXXS">
+                              Salir/Registrarse
+                           </li>
+
+                        </ul>
+                     </nav>
+                  <?php
+               }
+               ?>
+            </div>
+
+            <div class="columns small-12 medium-3 large-2">
+               <a href="#" id="menu-boton" class="button hollow fontM m0 text-center z1">
+                  Menú
+               </a>
             </div>
 
          </div>

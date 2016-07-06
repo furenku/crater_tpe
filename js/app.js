@@ -26,7 +26,7 @@ function interaccion_menu() {
 
    $('#menu-boton').click( function(e){
 
-      if( ! $('#menu').hasClass('activado') ) {
+      if( $(window).scrollTop() < $(window).height() / 10 && ! $('#menu').hasClass('activado') ) {
 
          $('#menu').animate({
 
@@ -50,17 +50,6 @@ function interaccion_menu() {
       if( ! scrolling ) {
 
          scrolling = setTimeout(function(){
-
-            if( $(window).scrollTop() > $(window).height() * 1/3 ) {
-               if( ! $('#menu-boton').hasClass('oculto') ) {
-                  $('#menu-boton').fadeOut().addClass('oculto')
-               }
-            } else {
-               if( $('#menu-boton').hasClass('oculto') ) {
-                  $('#menu-boton').fadeIn().removeClass('oculto')
-                  $('#menu').stop().animate({marginTop:0});
-               }
-            }
 
             if( $('#menu').hasClass('activado') ) {
 
