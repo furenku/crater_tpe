@@ -23,16 +23,19 @@
    </section>
 
 
-   <header id="cabecera" class="row expanded h_10vh">
+   <header id="cabecera" class="row expanded h_10vh" data-sticky-container>
+      <div class="sticky w_100 white_bg z1 h_10vh" data-sticky data-anchor="principal" data-margin-top="0">
 
-      <!-- #cabecera-logotipo.columns.small-5.medium-4.large-3 -->
-      <div id="cabecera-logotipo" class="columns small-5 medium-3 large-2">
-         Logotipo
-      </div>
+         <!-- #cabecera-logotipo.columns.small-5.medium-4.large-3 -->
+         <div id="cabecera-logotipo" class="columns small-5 medium-3 large-2">
+            Logotipo
+         </div>
 
-      <!-- #cabecera-titular.columns.small-7.medium-8.large-9 -->
-      <div id="cabecera-titular" class="columns small-7 medium-9 large-10">
-         Titular
+         <!-- #cabecera-titular.columns.small-7.medium-8.large-9 -->
+         <div id="cabecera-titular" class="columns small-7 medium-9 large-10">
+            Titular
+         </div>
+
       </div>
 
    </header>
