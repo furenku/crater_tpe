@@ -82,7 +82,6 @@ function interaccion_menu() {
 
 function interaccion_productos() {
    $('.publicacion-comprar').click(function(){
-      alert( $(this).parent().parent().parent().data('id') )
       return false;
    })
 }

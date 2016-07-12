@@ -4,7 +4,10 @@
    <meta charset="utf-8">
    <meta http-equiv="x-ua-compatible" content="ie=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title><?php echo bloginfo('name'); ?></title>
+
+   <title>
+      <?php echo bloginfo('name'); ?>
+   </title>
 
    <?php wp_head(); ?>
 
@@ -31,8 +34,10 @@
             <!-- #cabecera-titular.columns.small-7.medium-8.large-9 -->
             <div id="cabecera-titular" class="columns small-7 medium-6 large-7">
 
-               <?php if( is_page('Catálogo') )
-                     get_template_part('secciones/00-general/menu-ecommerce'); ?>
+               <?php
+
+               if( is_page('Catálogo') || in_array( get_page_by_title('Tienda')->ID, get_post_ancestors($post) ) )
+                  get_template_part('secciones/00-general/menu-ecommerce'); ?>
 
             </div>
 

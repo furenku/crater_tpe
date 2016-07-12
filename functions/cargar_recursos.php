@@ -21,13 +21,13 @@ function cargar_scripts() {
    wp_enqueue_script( 'frontendutils', get_stylesheet_directory_uri() . '/js/frontendutils.js', array('jquery') );
    wp_enqueue_script( 'app', get_stylesheet_directory_uri() . '/js/app.js', array('jquery', 'foundation', 'imgLiquid') );
 
-   // por si ocupamos AJAX:
-   // wp_enqueue_script( 'cargado_dinamico', get_stylesheet_directory_uri() . '/js/cargado_dinamico.js', array('jquery', 'foundation', 'imgLiquid') );
-   // wp_localize_script( 'cargado_dinamico', 'majluf_ajax',
-   //    array(
-   //       'ajaxurl' => admin_url( 'admin-ajax.php' )
-   //    )
-   // );
+
+   wp_enqueue_script( 'tienda', get_stylesheet_directory_uri() . '/js/tienda.js', array('jquery', 'foundation', 'imgLiquid') );
+   wp_localize_script( 'tienda', 'tpe_ajax',
+      array(
+         'ajaxurl' => admin_url( 'admin-ajax.php' )
+      )
+   );
 
 }
 

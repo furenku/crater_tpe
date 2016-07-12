@@ -1,12 +1,13 @@
 <nav id="ecommerce-nav">
    <ul>
 
-      <a href="#">
-         <li class="columns medium-3 fontXXS">
+      <a href="<?php echo WC()->cart->get_cart_url(); ?>">
+         
+         <li id="ecommerce-nav-carrito" class="columns medium-3 fontXXS">
             <div class="etiqueta columns small-8">
                Carrito
             </div>
-            <div class="total columns small-4">
+            <div id="ecommerce-nav-carrito-total" class="total columns small-4">
                $99999.99
             </div>
          </li>

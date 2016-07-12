@@ -7,3 +7,5 @@ include_once 'functions/cargar_recursos.php';
 include_once 'functions/integracion.php';
 
 include_once 'backend/index.php';
+
+include_once 'functions/ajax_tienda.php';
