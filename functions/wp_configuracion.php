@@ -22,4 +22,14 @@ function registrar_menus() {
 add_action( 'init', 'registrar_menus' );
 
 
+
+function clases_para_lis_menu($classes, $item, $args) {
+  $classes[] = 'small-12 columns shareH';
+  return $classes;
+}
+add_filter('nav_menu_css_class','clases_para_lis_menu',1,3);
+
+
+
+
 add_theme_support('post-thumbnails');

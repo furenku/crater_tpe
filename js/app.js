@@ -12,6 +12,7 @@ $(document).ready(function(){
    });
 
    u.vcenter();
+   u.shareH();
 
    interaccion_menu();
 
