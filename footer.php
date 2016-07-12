@@ -4,18 +4,7 @@
    <!-- aside#menu.columns.small-12.medium-3.large-2 -->
    <aside id="menu" class="columns small-12 medium-3 large-2 h_50vh" data-sticky-container>
       <div class="sticky" data-sticky data-anchor="area-stickies" data-margin-top="3">
-         <nav id="menu-principal">
-            <ul>
-               <li><a href="#">Elemento Menú</a></li>
-               <li><a href="#">Elemento Menú</a></li>
-               <li><a href="#">Elemento Menú</a></li>
-               <li><a href="#">Elemento Menú</a></li>
-               <li><a href="#">Elemento Menú</a></li>
-               <li><a href="#">Elemento Menú</a></li>
-               <li><a href="#">Elemento Menú</a></li>
-               <li><a href="#">Elemento Menú</a></li>
-            </ul>
-         </nav>
+         <?php wp_nav_menu( array( 'theme_location' => 'menu-principal' ) ); ?>
       </div>
 
    </aside>

@@ -11,4 +11,15 @@ function add_excerpts_to_pages() {
 }
 
 
+function registrar_menus() {
+
+   register_nav_menus(
+      array(
+         'menu-principal' => __( 'Menú Principal' )
+      )
+   );
+}
+add_action( 'init', 'registrar_menus' );
+
+
 add_theme_support('post-thumbnails');
