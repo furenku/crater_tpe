@@ -7,10 +7,10 @@
   for ($i=0; $i < 3; $i++) {
     ?>
 
-    <div id="inicio-catalogo-producto" class="small-12 large-4 columns h_80 h_md_25 h_sm_25">
+    <article id="inicio-catalogo-producto" class="small-12 large-4 columns p0 h_80vh h_md_25vh h_sm_25vh">
 
 
-      <div class="small-4 large-12 columns h_35vh h_md_100 h_sm_100 imgLiquid imgLiquidFill">
+      <div class="small-4 large-12 columns h_30 h_md_100 h_sm_100 imgLiquid imgLiquidFill">
         <img src="http://fakeimg.pl/250x320">
       </div>
 
@@ -18,7 +18,7 @@
         Lorem ipsum dolor sit amet.
       </h1>
 
-      <div id="inicio-catalogo-producto-fecha" class="small-8 medium-8 large-12 columns p0 fontS font_md_XS font_sm_XS text-right h_5">
+      <div id="inicio-catalogo-producto-fecha" class="small-8 medium-8 large-12 columns p0 pr2 fontS font_md_XS font_sm_XS text-right h_5">
         <small>publicado el </small>1 enero 1979
       </div>
 
@@ -31,7 +31,7 @@
 
 
 
-    </div>
+    </article>
 
 
 
