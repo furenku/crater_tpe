@@ -1,4 +1,4 @@
-<section id="inicio-catalogo" class="small-12 columns p0 m0 h_90vh">
+<section id="inicio-catalogo" class="small-12 columns p0 m0 ha">
 
   <?php
 
@@ -10,7 +10,7 @@
     <div id="inicio-catalogo-producto" class="small-12 large-4 columns h_80 h_md_25 h_sm_25">
 
 
-      <div class="small-4 large-12 columns h_30 h_md_100 h_sm_100 imgLiquid imgLiquidFill">
+      <div class="small-4 large-12 columns h_35vh h_md_100 h_sm_100 imgLiquid imgLiquidFill">
         <img src="http://fakeimg.pl/250x320">
       </div>
 
@@ -22,9 +22,9 @@
         <small>publicado el </small>1 enero 1979
       </div>
 
-      <div id="inicio-catalogo-producto-extracto" class="small-8 medium-8 large-12 columns p2 pt2 fontL font_sm_M font_sm_S text-left h_50">
+      <div id="inicio-catalogo-producto-extracto" class="small-8 medium-8 large-12 columns p2 pt2 fontL font_md_M font_sm_S text-left h_50">
         <div class="small-12 vcenter">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga aut, minus quos a incidunt dolorem exercitationem explicabo enim sunt! Nisi laboriosam saepe distinctio eveniet.
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga aut, minus quos a incidunt dolorem exercitationem explicabo enim sunt!.
         </div>
       </div>
 
@@ -43,6 +43,9 @@
   ?>
 
 
+<?php
 
+get_template_part("secciones/02-inicio/02-catalogo-sliders");
 
+?>
 </section>
