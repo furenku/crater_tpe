@@ -8,7 +8,9 @@
   ?>
 
 
-  <div id="inicio-informacion-uno" class="small-12 large-4 columns p0 rel h_90 h_md_30 h_sm_30">
+
+<!-- primer bloque -->
+  <div id="inicio-informacion-uno" class="small-12 large-4 columns p0 rel h_80 h_md_25 h_sm_25">
 
     <div id="inicio-informacion-uno-imagen" class="h_100 w_100 imgLiquid imgLiquidFill">
       <img src="http://fakeimg.pl/250x320">
@@ -24,7 +26,9 @@
 
   </div>
 
-  <div id="inicio-informacion-dos" class="small-12 large-4 columns p0 rel h_90 h_md_30 h_sm_30">
+
+<!-- segundo bloque -->
+  <div id="inicio-informacion-dos" class="small-12 large-4 columns p0 rel h_80 h_md_25 h_sm_25">
 
     <div id="inicio-informacion-dos-imagen" class="h_100 w_100 imgLiquid imgLiquidFill">
       <img src="http://fakeimg.pl/250x320">
@@ -40,7 +44,9 @@
 
   </div>
 
-  <div id="inicio-informacion-tres" class="small-12 large-4 columns p0 rel h_90 h_md_30 h_sm_30">
+
+<!-- tercer bloque -->
+  <div id="inicio-informacion-tres" class="small-12 large-4 columns p0 rel h_80 h_md_25 h_sm_25">
 
     <div id="inicio-informacion-tres-imagen" class="h_100 w_100 imgLiquid imgLiquidFill">
       <img src="http://fakeimg.pl/250x320">
