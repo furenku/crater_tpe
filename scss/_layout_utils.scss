@@ -263,6 +263,11 @@ $screen-lg-min: 1025px;
 }
 
 
+.h_5 {
+	@extend .h;
+	height: 5%;
+}
+
 .h_10 {
 	@extend .h;
 	height: 10%;
@@ -1021,7 +1026,7 @@ $screen-lg-min: 1025px;
 	}
 	.h_md_25vh {
 		display: block;
-		height: 24vh !important;
+		height: 25vh !important;
 	}
 
 	.h_md_30vh {
