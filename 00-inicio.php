@@ -14,8 +14,9 @@ get_template_part("secciones/02-inicio/04-informacion");
 
 get_template_part("secciones/02-inicio/05-autopublicacion");
 
-// get_template_part("secciones/02-inicio/06-suscripciones");
-// get_template_part("secciones/02-inicio/07-donde-comprar");
+get_template_part("secciones/02-inicio/06-suscripciones");
+
+get_template_part("secciones/02-inicio/07-donde-comprar");
 
 
 get_footer();
