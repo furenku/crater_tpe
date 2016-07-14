@@ -177,16 +177,11 @@ function inicio_catalogo_sliders() {
 
 function interaccion_menu_portada() {
    if( $('.boton-scroll').length > 0 ) {
-
       $('.boton-scroll').click(function(){
          var targetID = $(this).data('scroll_to');
-
-         // console.log( targetID,  $('*[data-scroll_target='+targetID+']') )
-         $('body').animate({
+         $('html,body').animate({
             scrollTop: $('[data-scroll_target="'+targetID+'"]').offset().top
-         })
-      })
-
+         });
+      });
    }
-
 }
