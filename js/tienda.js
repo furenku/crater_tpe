@@ -49,6 +49,9 @@ $(document).ready(function(){
 
    }
 
+
+   interaccion_colecciones();
+
 });
 
 function actualizar_carrito() {
@@ -82,12 +85,12 @@ function habilitar_cantidad_ejemplares( id ){
 
 
 
-
+var colecciones;
 function interaccion_colecciones() {
 
 
-      if($('#catalogo-colecciones').length>0)
-         $('#catalogo-colecciones').click(function(){
+      if($('#catalogo-colecciones .coleccion').length>0)
+         $('#catalogo-colecciones .coleccion').click(function(e){
             id = 0;
             var ajaxData = {
                type:"POST",
@@ -98,15 +101,48 @@ function interaccion_colecciones() {
                },
                dataType: 'json',
                success: function( resultado ) {
-                  // console.log( resultado );
-                  $('#ecommerce-nav-carrito-total').html( resultado.total );
-                  $('#ecommerce-nav-carrito-cantidad').html( resultado.cantidad );
+                  $('#catalogo-colecciones .elementos').animate({opacity:0},300,function(){
+
+                     $('#catalogo-colecciones .elementos').slick('unslick');
+                     colecciones=$('#catalogo-colecciones .elementos').html();
+                     $('#catalogo-colecciones .elementos').html( resultado );
+                     columnas=[3,2,1];
+                     $('#catalogo-colecciones .elementos .imgLiquid.imgLiquidNoFill').imgLiquid({fill:false});
+                     $('#catalogo-colecciones .elementos').slick({
+                        dots: true,
+                        slidesToShow: columnas[0],
+                        slidesToScroll: columnas[0],
+                        responsive: [
+                           {
+                              breakpoint: 1024,
+                              settings: {
+                                 slidesToShow: columnas[1],
+                                 slidesToScroll: columnas[1]
+                              }
+                           },
+                           {
+                              breakpoint: 640,
+                              settings: {
+                                 slidesToShow: columnas[2],
+                                 slidesToScroll: columnas[2]
+                              }
+                           }
+                        ]
+                     });
+
+                     $('#catalogo-colecciones .elementos').animate({opacity:1});
+
+                  });
                }
             }
 
             $.ajax(ajaxData);
 
-         })
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+
+         });
 
 
 }

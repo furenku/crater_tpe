@@ -23,7 +23,7 @@ $args = array(
 
 $all_categories = get_categories( $args );
 
-foreach ($all_categories as $cat) {
+foreach ($all_categories as $cat) :
    $category_id = $cat->term_id;
    ?>
 
@@ -45,6 +45,6 @@ foreach ($all_categories as $cat) {
 
    <?php
 
-}
+endforeach;
 
 ?>
