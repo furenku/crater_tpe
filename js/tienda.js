@@ -38,7 +38,7 @@ $(document).ready(function(){
             },
             dataType: 'json',
             success: function( resultado ) {
-               actualizar_total();
+               actualizar_carrito();
                habilitar_cantidad_ejemplares(id);
             }
          }
@@ -51,18 +51,19 @@ $(document).ready(function(){
 
 });
 
-function actualizar_total() {
+function actualizar_carrito() {
 
    var ajaxData = {
       type:"POST",
       url: tpe_ajax.ajaxurl,
       data: {
-         action: 'actualizar_total'
+         action: 'info_carrito'
       },
       dataType: 'json',
       success: function( resultado ) {
          // console.log( resultado );
-         $('#ecommerce-nav-carrito-total').html( resultado );
+         $('#ecommerce-nav-carrito-total').html( resultado.total );
+         $('#ecommerce-nav-carrito-cantidad').html( resultado.cantidad );
       }
    }
 

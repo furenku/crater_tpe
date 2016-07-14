@@ -101,16 +101,19 @@ function show_cart() {
 
 
 
-add_action( 'wp_ajax_actualizar_total', 'actualizar_total' );
-add_action( 'wp_ajax_nopriv_actualizar_total', 'actualizar_total' );
+add_action( 'wp_ajax_info_carrito', 'info_carrito' );
+add_action( 'wp_ajax_nopriv_info_carrito', 'info_carrito' );
 
-function actualizar_total() {
+function info_carrito() {
 
+	$cantidad = WC()->cart->get_cart_contents_count();
 	$total = WC()->cart->get_cart_total();
 
-	die( json_encode( $total ) );
+	die( json_encode( array( 'cantidad' => $cantidad, 'total' => $total ) ) );
 
 }
+
+
 
 
 add_action( 'wp_ajax_annadir_a_carrito', 'annadir_a_carrito' );
