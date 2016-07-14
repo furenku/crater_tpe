@@ -5,20 +5,24 @@ Template Name: Catálogo
 
 get_header();
 
-/* Colecciones */
 
-get_template_part('secciones/05-catalogo/01-colecciones');
+global $paginas_catalogo;
 
+foreach($paginas_catalogo as $pagina):
 
-/* Ediciones Únicas */
+?>
 
-get_template_part('secciones/05-catalogo/02-ediciones_unicas');
+   <section id="catalogo-<?php echo $pagina->ID; ?>" class="p5 h_90vh" data-scroll_target="<?php echo $pagina->ID; ?>">
+      <h1>
+         <?php echo apply_filters('the_title', $pagina->post_title); ?>
+      </h1>
+      <div class="elementos">
+         elementos...
 
+      </div>
+   </section>
 
-
-/* Proyectos */
-
-get_template_part('secciones/05-catalogo/03-proyectos');
-
+<?php
+endforeach;
 
 get_footer();
