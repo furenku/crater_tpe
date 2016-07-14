@@ -16,6 +16,8 @@
  * @version 2.1.2
  */
 
+$checkout = WC()->checkout();
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }

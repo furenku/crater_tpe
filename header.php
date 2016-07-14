@@ -24,7 +24,7 @@
    <div id="area-stickies" class="row expanded h_a">
 
       <header id="cabecera" class="row expanded h_3em" data-sticky-container>
-         <div class="sticky w_100 white_bg z1 h_3em" data-sticky data-anchor="area-stickies" data-margin-top="0">
+         <div class="sticky w_100 color_blanco_bg z1 h_3em" data-sticky data-anchor="area-stickies" data-margin-top="0">
 
             <!-- #cabecera-logotipo.columns.small-5.medium-4.large-3 -->
             <div id="cabecera-logotipo" class="columns small-5 medium-3 large-2">

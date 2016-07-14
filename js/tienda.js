@@ -77,3 +77,36 @@ function actualizar_carrito() {
 function habilitar_cantidad_ejemplares( id ){
    console.log( "habilitar", id )
 }
+
+
+
+
+
+
+function interaccion_colecciones() {
+
+
+      if($('#catalogo-colecciones').length>0)
+         $('#catalogo-colecciones').click(function(){
+            id = 0;
+            var ajaxData = {
+               type:"POST",
+               url: tpe_ajax.ajaxurl,
+               data: {
+                  id: id,
+                  action: 'cargar_coleccion'
+               },
+               dataType: 'json',
+               success: function( resultado ) {
+                  // console.log( resultado );
+                  $('#ecommerce-nav-carrito-total').html( resultado.total );
+                  $('#ecommerce-nav-carrito-cantidad').html( resultado.cantidad );
+               }
+            }
+
+            $.ajax(ajaxData);
+
+         })
+
+
+}

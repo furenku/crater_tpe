@@ -27,7 +27,7 @@ foreach ($all_categories as $cat) {
    $category_id = $cat->term_id;
    ?>
 
-   <a href="<?php echo get_term_link($cat->slug, 'product_cat'); ?>" class="columns medium-6">
+      <a href="<?php echo get_term_link($cat->slug, 'product_cat'); ?>" class="coleccion columns medium-6 button color_negro_bg color_blanco color_blanco_hover_bg color_negro_hover">
       <?php
       $thumbnail_id = get_woocommerce_term_meta( $cat->term_id, 'thumbnail_id', true );
       $image = wp_get_attachment_url( $thumbnail_id );
@@ -35,7 +35,12 @@ foreach ($all_categories as $cat) {
       <div class="imagen h_25vh imgLiquid imgLiquidFill">
          <img src="<?php echo $image; ?>" alt="">
       </div>
-      <?php echo $cat->name; ?>
+      <h3 class="p4">
+         <?php echo $cat->name; ?>
+      </h3>
+      <p class="p4 text-left">
+         <?php echo $cat->description; ?>
+      </p>
    </a>
 
    <?php

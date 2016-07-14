@@ -202,27 +202,27 @@ function catalogo_sliders() {
 
 
          $(this).slick({
+            dots: true,
             slidesToShow: columnas[0],
-              slidesToScroll: columnas[0],
-              responsive: [
-                {
+            slidesToScroll: columnas[0],
+            responsive: [
+               {
                   breakpoint: 1024,
                   settings: {
-                    slidesToShow: columnas[1],
-                    slidesToScroll: columnas[1]
+                     slidesToShow: columnas[1],
+                     slidesToScroll: columnas[1]
                   }
                },
                {
-                 breakpoint: 640,
-                 settings: {
-                   slidesToShow: columnas[2],
-                   slidesToScroll: columnas[2]
-                 }
+                  breakpoint: 640,
+                  settings: {
+                     slidesToShow: columnas[2],
+                     slidesToScroll: columnas[2]
+                  }
                }
-              ]
+            ]
          });
       })
    }
-
 
 }

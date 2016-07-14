@@ -17,7 +17,7 @@ se va aumentando, dando una cierta separación visual entre una y otra.
 get_header();
 
 global $paginas_hijas;
-
+if( $paginas_hijas )
 foreach( $paginas_hijas as $pagina ) {
    mostrar_hijas( $pagina );
 }

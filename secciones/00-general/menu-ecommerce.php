@@ -1,3 +1,6 @@
+<?php
+global $woocommerce;
+?>
 <nav id="ecommerce-nav">
    <ul>
 
@@ -8,21 +11,25 @@
                Carrito
             </div>
             <div id="ecommerce-nav-carrito-cantidad" class="cantidad columns small-2">
-               0
+               <?php echo $woocommerce->cart->get_cart_contents_count; ?>
             </div>
             <div id="ecommerce-nav-carrito-total" class="total columns small-3">
-               $99999.99
+               <?php echo $woocommerce->cart->get_cart_total; ?>
             </div>
          </li>
       </a>
 
 
 
-      <a href="#">
+      <?php
+      #if ( $woocommerce->cart->get_cart_contents_count > 0 ) :
+      ?>
+      <a href="<?php echo $woocommerce->cart->get_checkout_url(); ?>">
          <li class="columns medium-3 fontXXS">
-            Realizar pedido
+            Realizar compra
          </li>
       </a>
+      <?php #endif; ?>
 
 
 

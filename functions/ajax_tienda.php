@@ -172,4 +172,20 @@ function clear_cart() {
 
 }
 
+
+
+
+add_action( 'wp_ajax_cargar_coleccion', 'cargar_coleccion' );
+add_action( 'wp_ajax_nopriv_cargar_coleccion', 'cargar_coleccion' );
+
+function cargar_coleccion() {
+
+	$ID = $_POST['id'];
+
+	$coleccion = array();
+
+	die( json_encode( $coleccion ) );
+
+}
+
 ?>
