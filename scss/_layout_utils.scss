@@ -1900,29 +1900,6 @@ $screen-lg-min: 1025px;
 }
 
 
-.white {
-	color: #fff !important;
-}
-.black {
-	color: #000 !important;
-}
-.transparent {
-	background-color: transparent !important;
-}
-.white_bg {
-	background-color: #fff !important;
-}
-.black_bg {
-	background-color: #000 !important;
-}
-
-.white_bd {
-	border-color: #fff !important;
-}
-.black_bd {
-	border-color: #000 !important;
-}
-
 .bold {
 	font-weight: bold;
 }
@@ -2048,4 +2025,54 @@ $screen-lg-min: 1025px;
 
 .vcenter {
 	height: auto !important;
+}
+
+
+
+
+
+
+
+/**************** COLORES ****************/
+
+
+
+
+$white: #fff;
+$black: #000;
+$primario: #0bc1ed;
+$secundario: #4bd1fd;
+
+$lista_colores: (
+  blanco   $white,
+  negro   $black,
+  primario   $primario,
+  secundario $secundario
+);
+
+
+@each $value in $lista_colores {
+
+
+	   .color_#{nth($value, 1)} {
+			color: nth($value, 2) !important;
+	   }
+	   .color_#{nth($value, 1)}_bg {
+			background-color: nth($value, 2) !important;
+	   }
+	   .color_#{nth($value, 1)}_bd {
+			border: nth($value, 2) !important;
+	   }
+
+	   .color_#{nth($value, 1)}_hover:hover {
+			color: nth($value, 2) !important;
+	   }
+	   .color_#{nth($value, 1)}_hover_bg:hover {
+			background-color: nth($value, 2) !important;
+	   }
+	   .color_#{nth($value, 1)}_hover_bd:hover {
+			border: nth($value, 2) !important;
+	   }
+
+
 }
