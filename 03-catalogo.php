@@ -17,7 +17,18 @@ foreach($paginas_catalogo as $pagina):
          <?php echo apply_filters('the_title', $pagina->post_title); ?>
       </h1>
       <div class="elementos">
-         elementos...
+         <?php
+         if( $pagina->post_title == "Colecciones" ) :
+
+            get_template_part("secciones/05-catalogo/01-colecciones");
+
+         endif;
+         if( $pagina->post_title == "Ediciones Únicas" ) :
+
+            get_template_part("secciones/05-catalogo/02-ediciones_unicas");
+
+         endif;
+         ?>
 
       </div>
    </section>

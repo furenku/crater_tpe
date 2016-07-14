@@ -14,7 +14,7 @@ $paginas_catalogo = get_pages( array( 'child_of' => get_page_by_title("Catálogo
    <div class="columns medium-6 large-5 p5">
       <div class="vcenter">
          <p class="fontL">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias eaque debitis expedita.
+            <?php echo apply_filters('the_content', get_page_by_title("Catálogo")->post_content); ?>
          </p>
       </div>
    </div>
@@ -34,8 +34,8 @@ $paginas_catalogo = get_pages( array( 'child_of' => get_page_by_title("Catálogo
          <div class="imagen h_25vh imgLiquid imgLiquidFill">
             <?php echo get_the_post_thumbnail( $ID ); ?>
          </div>
-         <h3 class="p5"><?php echo $titulo; ?></h3>
-         <p class="extracto fontM"><?php echo $texto; ?></p>
+         <h5 class="p5 pb0"><?php echo $titulo; ?></h5>
+         <span class="extracto fontXS p5 pt0 text-left"><?php echo $texto; ?></span>
       </div>
 
    </div>
