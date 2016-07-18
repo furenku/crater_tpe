@@ -1,4 +1,6 @@
-<section id="inicio-blog" class="small-12 columns p0 m0 ha">
+<section id="inicio-blog" class="contenedor_titular_interactivo small-12 columns p0 m0 ha">
+
+   <h1 class="titular_interactivo">Blog</h1>
 
   <?php
 

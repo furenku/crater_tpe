@@ -1,6 +1,8 @@
-<section id="inicio-catalogo" class="small-12 columns p0 m0 ha">
+<section id="inicio-catalogo" class="contenedor_titular_interactivo small-12 columns p0 m0 ha">
 
-  <?php
+   <h1 class="titular_interactivo">Nuestro catálogo</h1>
+
+   <?php
 
   get_template_part("secciones/00-compartidas/01-texto-descriptivo-seccion");
 
@@ -14,9 +16,9 @@
         <img src="http://fakeimg.pl/250x320">
       </div>
 
-      <h1 id="inicio-catalogo-producto-titulo" class="small-8 medium-8 large-12 columns p2 fontXL font_sm_L font_md_M text-center">
+      <h3 id="inicio-catalogo-producto-titulo" class="small-8 medium-8 large-12 columns p2 text-center">
         Lorem ipsum dolor sit amet.
-      </h1>
+     </h3>
 
       <div id="inicio-catalogo-producto-fecha" class="small-8 medium-8 large-12 columns p0 pr2 fontS font_md_XS font_sm_XS text-right h_5">
         <small>publicado el </small>1 enero 1979

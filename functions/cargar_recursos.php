@@ -18,6 +18,8 @@ function cargar_scripts() {
    wp_enqueue_script( 'foundation', get_stylesheet_directory_uri() . '/bower_components/foundation-sites/dist/foundation.js', array('jquery') );
    wp_enqueue_script( 'imgLiquid', get_stylesheet_directory_uri() . '/bower_components/imgLiquid/js/imgLiquid-min.js' );
    wp_enqueue_script( 'slick', get_stylesheet_directory_uri() . '/bower_components/slick-carousel/slick/slick.js' );
+   wp_enqueue_script( 'appear', get_stylesheet_directory_uri() . '/bower_components/jquery-appear/build/jquery.appear.min.js' );
+
    wp_enqueue_script( 'frontendutils', get_stylesheet_directory_uri() . '/js/frontendutils.js', array('jquery') );
    wp_enqueue_script( 'app', get_stylesheet_directory_uri() . '/js/app.js', array('jquery', 'foundation', 'imgLiquid') );
 

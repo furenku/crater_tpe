@@ -12,7 +12,8 @@
     "foundation-sites": "~6.2.0",
     "motion-ui": "~1.2.2",
     "imgLiquid": "^0.9.944",
-    "slick-carousel": "slick.js#^1.6.0"
+    "slick-carousel": "slick.js#^1.6.0",
+    "jquery-appear": "^0.2.6"
   },
   "ignore": [
     "**/.*",

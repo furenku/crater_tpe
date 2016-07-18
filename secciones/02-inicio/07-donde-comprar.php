@@ -1,5 +1,7 @@
-<section id="inicio-donde-comprar" class="small-12 columns p0 m0 h_90vh">
+<section id="inicio-donde-comprar" class="contenedor_titular_interactivo small-12 columns p0 m0 h_90vh">
 
+
+      <h1 class="titular_interactivo">Dónde comprar</h1>
 
   <?php
 
@@ -23,7 +25,7 @@
 
   </div>
 
-  <div id="inicio-donde-comprar-imagen" class="small-12 large-6  columns p0 h_75 h_md_30 h_sm_30">
+  <div id="inicio-donde-comprar-imagen" class="small-12 large-6  columns p0 h_60 h_md_30 h_sm_30">
 
     <div class="large-12 columns h_100 imgLiquid imgLiquidFill">
       <img src="http://fakeimg.pl/250x320">
