@@ -1,4 +1,4 @@
-<div class="w_100 h_100 abs z-1 imgLiquid imgLiquidFill">
+<div class="w_100 h_100vh abs z-1 imgLiquid imgLiquidFill">
    <img src="http://fakeimg.pl/1200x600" alt="">
 </div>
 <div class="columns medium-8 large-8 medium-offset-1 large-offset-2 vcenter h_a text-center end">
