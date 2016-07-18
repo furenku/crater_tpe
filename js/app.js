@@ -248,29 +248,34 @@ function catalogo_sliders() {
 var ultimo_contenedor_scrolleado;
 var contenedor_actual;
 var contenedores_activos = [];
-var contador =0;
+
 function colocar_titulares_al_scrollear() {
 
    $('.contenedor_titular_interactivo').on('appear',function(event, $all_appeared_elements){
 
-      contenedor = $(event.target);
-      contenedor_actual = contenedor;
-      if( getIndex( contenedor.attr('id'), contenedores_activos ) == -1 )
-         contenedores_activos.push( contenedor.attr('id') );
+      contenedor_actual = $(event.target);
+
+      if( contenedores_activos.length == 0 )
+         colocar_titular_arriba( contenedor_actual );
+
+      if( getIndex( contenedor_actual.attr('id'), contenedores_activos ) == -1 )         
+         contenedores_activos.push( contenedor_actual.attr('id') );
+
+
+
 
 
    })
 
    $('.contenedor_titular_interactivo').on('disappear',function(event, $all_appeared_elements){
 
-      contador++;
       contenedor = $(event.target);
       var borrar = getIndex( contenedor.attr('id'), contenedores_activos );
       if(borrar!=-1)
          contenedores_activos.splice( borrar, 1 );
 
       for(i in contenedores_activos ) {
-         console.log(contador, i, contenedores_activos[i] );
+         console.log( i, contenedores_activos[i] );
          colocar_titular_arriba( $( '#'+contenedores_activos[i]) );
       }
    })
@@ -282,7 +287,6 @@ function getIndex( item, array ) {
    for( i in array )
       if( array[i] == item )
          return i;
-
    return -1;
 }
 
@@ -303,15 +307,4 @@ function colocar_titular_arriba( contenedor ){
       ultimo_contenedor_scrolleado = contenedor;
 
    }
-}
-
-function isScrolledIntoView(elem)
-{
-   var docViewTop = $(window).scrollTop();
-   var docViewBottom = docViewTop + $(window).height();
-
-   var elemTop = $(elem).offset().top;
-   var elemBottom = elemTop + $(elem).height();
-
-   return ((elemBottom <= docViewBottom) || (elemTop >= docViewTop));
 }
