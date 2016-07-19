@@ -3,7 +3,16 @@
 
    <!-- aside#menu.columns.small-12.medium-3.large-2 -->
    <aside id="menu" class="columns small-12 medium-3 large-2 h_50vh" data-sticky-container>
-      <div class="sticky" data-sticky data-anchor="area-stickies" data-margin-top="3">
+      <!-- #cabecera-logotipo.columns.small-5.medium-4.large-3 -->
+
+      <div class="sticky" data-sticky data-anchor="area-stickies" data-margin-top="0">
+         <div id="cabecera-logotipo" class="h_5em mb1">
+            <a href="<?php echo get_site_url(); ?>">
+               <div class="imagen imgLiquid imgLiquidNoFill">
+                  <img src="http://fakeimg.pl/300x100" alt="" />
+               </div>
+            </a>
+         </div>
          <?php wp_nav_menu( array( 'theme_location' => 'menu-principal', 'container' => 'nav' ) ); ?>
       </div>
 

@@ -258,7 +258,7 @@ function colocar_titulares_al_scrollear() {
       if( contenedores_activos.length == 0 )
          colocar_titular_arriba( contenedor_actual );
 
-      if( getIndex( contenedor_actual.attr('id'), contenedores_activos ) == -1 )         
+      if( getIndex( contenedor_actual.attr('id'), contenedores_activos ) == -1 )
          contenedores_activos.push( contenedor_actual.attr('id') );
 
 
@@ -302,6 +302,7 @@ function colocar_titular_arriba( contenedor ){
       titular_original.addClass('arriba');
       var titular_nuevo = titular_original.clone().removeClass('titular_interactivo arriba').detach();
       $( '#cabecera-titular' ).html( titular_nuevo );
+      u.vcenter( '#cabecera-titular h1' )
       titular_nuevo.animate({opacity:1});
 
       ultimo_contenedor_scrolleado = contenedor;

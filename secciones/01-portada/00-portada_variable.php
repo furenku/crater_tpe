@@ -17,7 +17,16 @@ if( is_page('Inicio') ) {
    get_template_part('secciones/10-tienda/realizar_compra');
 
 } else if( is_page() ) {
+   $parents = get_post_ancestors( get_the_ID() );
+   $parent = $parents[0];
+   $parent = get_page($parent);
+   $parent_titulo =  $parent->post_title ;
 
-   get_template_part('secciones/00-general/page-0-portada');
+   if( $parent_titulo == "Información" || get_the_title() == "Información" ) {
+      get_template_part('secciones/03-info/00-portada');
+   }
+   else {
+      get_template_part('secciones/00-general/page-0-portada');
+   }
 
 }

@@ -24,7 +24,7 @@
       <div class="" data-sticky-container>
 
          <div class="sticky h_a text-right right" data-sticky data-anchor="portada" data-margin-top="3">
-            <a href="#" id="menu-boton" class="button hollow fontM m0 text-center z1 right mr2">
+            <a href="#" id="menu-boton" class="button hollow fontM m0 text-center z1 right f">
                Menú
             </a>
          </div>
@@ -35,16 +35,10 @@
 
    <div id="area-stickies" class="row expanded h_a rel">
 
-      <header id="cabecera" class="row expanded h_3em" data-sticky-container>
-         <div class="sticky w_100 color_blanco_bg z1 h_3em" data-sticky data-anchor="area-stickies" data-margin-top="0">
+      <header id="cabecera" class="row expanded h_5em" data-sticky-container>
+         <div class="sticky w_100 color_blanco_bg z1 h_5em" data-sticky data-anchor="area-stickies" data-margin-top="0">
 
-            <!-- #cabecera-logotipo.columns.small-5.medium-4.large-3 -->
-            <div id="cabecera-logotipo" class="columns small-5 medium-3 large-2">
-               Logotipo
-            </div>
-
-            <!-- #cabecera-titular.columns.small-7.medium-8.large-9 -->
-            <div id="cabecera-titular" class="columns small-7 medium-9 large-10">
+            <div id="cabecera-titular" class="columns">
 
                <?php
 

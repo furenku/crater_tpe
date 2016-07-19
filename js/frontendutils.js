@@ -14,7 +14,7 @@ function FrontEndUtils(){
 			item = $(this);
 			p = item.parent();
 			mT = ( p.height() - item.height() ) / 2;
-			item.css({ marginTop: mT, opacity: 1 });
+			item.css({ marginTop: mT });
 
 		})
 	}

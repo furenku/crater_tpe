@@ -1,4 +1,4 @@
-<section id="inicio-contacto" class="contenedor_titular_interactivo small-12 columns p0 m0 h_90vh">
+<section id="inicio-contacto" class="contenedor_titular_interactivo small-12 columns p0 m0 h_a mb4">
 
 
    <h1 class="titular_interactivo">Contacto</h1>
