@@ -1,1 +1,6 @@
 - Plantilla página jerárquica
+- Plantilla Suscripciones
+   - Crear 3 productos-suscripción
+
+- Catálogo
+   - Añadir botones "comprar"

@@ -3,7 +3,8 @@
    <h1 class="titular_interactivo">Nuestro catálogo</h1>
 
    <?php
-
+   $catalogo = get_page_by_title("Catálogo");
+   set_query_var( 'pagina_a_cargar', $catalogo->ID );
   get_template_part("secciones/00-compartidas/01-texto-descriptivo-seccion");
 
   for ($i=0; $i < 3; $i++) {

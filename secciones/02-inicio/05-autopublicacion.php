@@ -4,6 +4,7 @@
    <h1 class="titular_interactivo">Autopublicación</h1>
 
    <?php
+   set_query_var( 'pagina_a_cargar', get_page_by_title("Autopublicación")->ID );
 
    get_template_part("secciones/00-compartidas/01-texto-descriptivo-seccion");
 

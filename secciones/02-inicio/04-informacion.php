@@ -4,6 +4,7 @@
 
 
    <?php
+   set_query_var( 'pagina_a_cargar', get_page_by_title("Información")->ID );
 
    get_template_part("secciones/00-compartidas/01-texto-descriptivo-seccion");
 
