@@ -165,6 +165,7 @@ function inicio_catalogo_sliders() {
 
    // proyectos especiales slider
    $('#inicio-catalogo-proyectos-especiales').slick({
+
       dots: false,
       arrows: true,
       infinite: true,
@@ -186,6 +187,7 @@ function inicio_catalogo_sliders() {
             }
          }
       ]
+
    });
 
 }
@@ -208,12 +210,12 @@ function interaccion_menu_portada() {
 
 
 function catalogo_sliders() {
+
    if($('.catalogo-seccion').length>0) {
+
       $('.catalogo-seccion .elementos').each(function(){
 
          var columnas = $(this).data('columnas');
-
-         console.log(columnas)
 
 
          $(this).slick({
@@ -236,8 +238,11 @@ function catalogo_sliders() {
                   }
                }
             ]
+
          });
+
       })
+
    }
 
 }
@@ -251,6 +256,7 @@ var contenedores_activos = [];
 
 function colocar_titulares_al_scrollear() {
 
+
    $('.contenedor_titular_interactivo').on('appear',function(event, $all_appeared_elements){
 
       contenedor_actual = $(event.target);
@@ -261,11 +267,8 @@ function colocar_titulares_al_scrollear() {
       if( getIndex( contenedor_actual.attr('id'), contenedores_activos ) == -1 )
          contenedores_activos.push( contenedor_actual.attr('id') );
 
-
-
-
-
    })
+
 
    $('.contenedor_titular_interactivo').on('disappear',function(event, $all_appeared_elements){
 
@@ -279,7 +282,10 @@ function colocar_titulares_al_scrollear() {
          colocar_titular_arriba( $( '#'+contenedores_activos[i]) );
       }
    })
+
+
 }
+
 
 
 function getIndex( item, array ) {

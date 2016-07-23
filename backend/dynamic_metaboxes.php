@@ -65,7 +65,61 @@ $metaboxes = array(
 
       )
 
-   )
+   ),
+
+   'product'=>array(
+
+      'post_type'    => 'product',
+      'name'         => 'product-editoriales',
+      'title'        => 'Información Producto',
+      'description'  => '
+
+      ',
+
+      'fields' => array(
+         array(
+            'field_name'            => 'product-editorial',
+
+            'field_type'            => 'related_post',
+            'repeatable'            => true,
+            'related_post_types'    => array('editorial'),
+
+            'field_label'           => 'Editorial',
+            'description'           => '
+            <p class="fontXXS" style="font-size:10px">
+            ...
+            </p>
+            <p class="fontXXS" style="font-size:10px">
+            ...
+            </p>
+            ',
+            'markup_function'       => 'standard_metabox_markup'
+         ),
+
+
+         array(
+            'field_name'            => 'product-persona',
+
+            'field_type'            => 'related_post',
+            'repeatable'            => true,
+            'related_post_types'    => array('persona'),
+
+            'field_label'           => 'Personas',
+            'description'           => '
+            <p class="fontXXS" style="font-size:10px">
+            ...
+            </p>
+            <p class="fontXXS" style="font-size:10px">
+            ...
+            </p>
+            ',
+            'markup_function'       => 'standard_metabox_markup'
+         ),
+
+      )
+
+   ),
+
 );
 
 function standard_metabox_markup( $post,  $callback_args ) {
@@ -86,18 +140,22 @@ function standard_metabox_markup( $post,  $callback_args ) {
 
       foreach($metabox['fields'] as $field ) :
 
+         echo '<div class="field">';
+
+         echo '<div class="field_label">';
 
          echo '<label for="'. $field['field_name'].'">'. $field['field_label'] .'</label>';
 
-         echo '</br>';
+         echo '</div>';
+
+         echo '<div class="field_inputs">';
 
          $related_posts = get_post_meta(
-            $post->ID,
-            $field['field_name'],
-            true
-         );
+         $post->ID,
+         $field['field_name'],
+         true
+      );
 
-         var_dump( $related_posts );
 
 
       if( $field['field_type'] == "related_post" ) {
@@ -111,7 +169,7 @@ function standard_metabox_markup( $post,  $callback_args ) {
             if(is_array($related_posts)) {
                foreach( $related_posts as $related_post ) {
                   if( $related_post != "0" )
-                     related_post_selector( $field['field_name'] . '[]', $posts, $related_post );
+                  related_post_selector( $field['field_name'] . '[]', $posts, $related_post );
                }
             }
 
@@ -120,6 +178,18 @@ function standard_metabox_markup( $post,  $callback_args ) {
          }
 
       }
+
+      if( $field['repeatable'] ) {
+         ?>
+
+         <div class="add_repeatable button">Añadir otro</div>
+
+         <?php
+      }
+
+      echo '</div>';
+
+      echo '</div>';
 
    endforeach; ?>
 
@@ -133,15 +203,35 @@ function add_dynamic_metaboxes()
    global $metaboxes;
    foreach($metaboxes as $metabox) :
       add_meta_box(
-         $metabox['post_type']."-meta-box",
-         $metabox['title'],
-         "standard_metabox_markup",
-         $metabox['post_type'],
-         "side",
-         "default",
-         array('metabox'=>$metabox)
-      );
-   endforeach;
+      $metabox['post_type']."-meta-box",
+      $metabox['title'],
+      "standard_metabox_markup",
+      $metabox['post_type'],
+      "side",
+      "default",
+      array('metabox'=>$metabox)
+   );
+endforeach;
+
+?>
+
+<script>
+jQuery(document).ready(function($){
+
+   $('.add_repeatable').click(function(){
+      $(this).parent().find('.repeatable.hidden').clone().detach().removeClass('hidden').appendTo( '.repeatables' );
+      $(this).parent().find('.delete_this.hidden').clone().detach().removeClass('hidden').appendTo( '.repeatables' );
+   })
+
+   $('.delete_this').click(function(){
+      $(this).prev().remove();
+      $(this).remove();
+   })
+})
+</script>
+
+<?php
+
 }
 
 
@@ -203,27 +293,30 @@ function save_dynamic_metaboxes($post_id, $post, $update)
 
                foreach( $related_post_ids as $related_post_id ) {
 
+                  $related_post_type = $field['related_post_types'];
+                  $related_post_type = $related_post_type[0];
+
                   // checar si hay arreglo de referencias a posts 1 en post 2 recien asignado
-                  $posts = get_post_meta( $related_post_id, $field['related_post_types'][0].'-'.$metabox['post-type'], true );
+                  $posts = get_post_meta(
+                     $related_post_id,
+                     $related_post_type.'-'.$metabox['post-type'],
+                     true
+                  );
 
                   if( is_array($posts) ) {
                      if( ! in_array($post_id,$post_id))
-                        array_push($posts, $post_id);
+                     array_push($posts, $post_id);
                   } else {
                      // si no, crear arreglo
                      $posts = array( $post_id );
                   }
 
-                  $related_post_type = $field['related_post_types'];
-                  $related_post_type = $related_post_type[0];
 
                   update_post_meta(
                      $related_post_id,
                      $related_post_type.'-'.$metabox['post_type'],
                      array_unique($posts)
                   );
-
-                  // ahí, añadir una referencia a este post en arreglo en post 2
 
                }
 
@@ -233,7 +326,7 @@ function save_dynamic_metaboxes($post_id, $post, $update)
                $post_id,
                $field['field_name'],
                $field_value
-               // array(1,2,3)
+
             );
 
          }
@@ -241,7 +334,6 @@ function save_dynamic_metaboxes($post_id, $post, $update)
       }
 
    }
-
 
 }
 
