@@ -1,8 +1,16 @@
+<?php
+$inicio = get_page_by_title("Inicio");
+?>
+
 <div class="w_100 h_100vh abs z-1 imgLiquid imgLiquidFill">
-   <img src="http://fakeimg.pl/1200x600" alt="">
+   <?php echo get_the_post_thumbnail( $inicio->ID, 'full' ); ?>
 </div>
 <div class="columns medium-8 large-8 medium-offset-1 large-offset-2 vcenter h_a text-center end">
-   <h1 class="fontHuge">TPE</h1>
-   <p class="text-left fontXL">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error eius nobis rerum?</p>
-   <p class="text-left fontXL">Quam ipsa ducimus ad doloremque voluptates cum, adipisci voluptatum quisquam nihil dignissimos.</p>
+   <h1 id="inicio-portada-nombre_sitio" class="fontHuge">
+      <?php echo bloginfo( 'name' ); ?>
+   </h1>
+   <div class="contenido text-left fontXL">
+      <?php echo apply_filters('the_content', $inicio->post_content ); ?>
+   </div>
+
 </div>

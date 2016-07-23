@@ -4,10 +4,6 @@
 
 
    <?php
-   set_query_var( 'pagina_a_cargar', get_page_by_title("Información")->ID );
-
-   get_template_part("secciones/00-compartidas/01-texto-descriptivo-seccion");
-
    $pagina_superior = get_page_by_title("Información");
    $paginas = get_pages( array('parent'=>$pagina_superior->ID));
 
@@ -45,7 +41,11 @@
       </div>
 
       <?php
+
    endforeach;
+
+   set_query_var( 'pagina_a_cargar', get_page_by_title("Información")->ID );
+   get_template_part("secciones/00-compartidas/01-texto-descriptivo-seccion");
    ?>
 
 

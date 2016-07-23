@@ -2,7 +2,9 @@
 <section id="inicio-suscripciones" class="contenedor_titular_interactivo small-12 columns p0 m0 h_90vh">
 
 
-   <h1 class="titular_interactivo">Suscríbete</h1>
+   <h1 class="titular_interactivo">
+      Suscripciones
+   </h1>
 
    <div id="inicio-suscripciones-imagen" class="small-12 large-6 columns p0 h_60 h_md_30 h_sm_30">
 

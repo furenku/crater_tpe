@@ -213,7 +213,7 @@ function cargar_coleccion() {
 	               <?php echo apply_filters( 'the_title', get_the_title() ); ?>
 	            </h6>
 	            <div class="autor fontXXS h_a">
-	               Nombre de de Autor 1, Nombre de de Autor 2, Nombre de de Autor 3
+	               <?php echo get_post_meta( get_the_ID(), 'autor', true ); ?>
 	            </div>
 	         </header>
 	         <section class="imagen h_30 h_sm_30 h_sm_30vh imgLiquid imgLiquidNoFill">
