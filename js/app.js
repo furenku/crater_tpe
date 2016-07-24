@@ -13,6 +13,7 @@ $(document).ready(function(){
 
    u.vcenter();
    u.shareH();
+   u.shareW();
 
    interaccion_menu();
 
@@ -23,6 +24,8 @@ $(document).ready(function(){
    inicio_catalogo_sliders();
 
    catalogo_sliders();
+
+
 
 
    $('.titular_interactivo').each(function(){

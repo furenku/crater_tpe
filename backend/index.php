@@ -12,19 +12,19 @@ function registrar_ctps() {
 
    $cpts = array(
 
-      array(
+      'editorial' => array(
          'post_type' => 'editorial',
          'label_single' => 'Editorial',
          'label_plural'=> 'Editoriales',
       ),
 
-      array(
+      'persona' => array(
          'post_type' => 'persona',
          'label_single' => 'Persona',
          'label_plural'=> 'Personas'
       ),
 
-      array(
+      'proyecto' => array(
          'post_type' => 'proyecto',
          'label_single' => 'Proyecto',
          'label_plural'=> 'Proyectos'
