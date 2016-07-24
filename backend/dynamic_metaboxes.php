@@ -120,6 +120,79 @@ $metaboxes = array(
 
    ),
 
+
+
+      'proyecto'=>array(
+
+         'post_type'    => 'proyecto',
+         'name'         => 'proyecto-editoriales',
+         'title'        => 'Información proyectoo',
+         'description'  => '
+
+         ',
+
+         'fields' => array(
+            array(
+               'field_name'            => 'proyecto-editorial',
+
+               'field_type'            => 'related_post',
+               'repeatable'            => true,
+               'related_post_types'    => array('editorial'),
+
+               'field_label'           => 'Editorial',
+               'description'           => '
+               <p class="fontXXS" style="font-size:10px">
+               ...
+               </p>
+               <p class="fontXXS" style="font-size:10px">
+               ...
+               </p>
+               ',
+               'markup_function'       => 'standard_metabox_markup'
+            ),
+
+
+            array(
+               'field_name'            => 'proyecto-persona',
+
+               'field_type'            => 'related_post',
+               'repeatable'            => true,
+               'related_post_types'    => array('persona'),
+
+               'field_label'           => 'Personas',
+               'description'           => '
+               <p class="fontXXS" style="font-size:10px">
+               ...
+               </p>
+               <p class="fontXXS" style="font-size:10px">
+               ...
+               </p>
+               ',
+               'markup_function'       => 'standard_metabox_markup'
+            ),
+
+            array(
+               'field_name'            => 'proyecto-product',
+
+               'field_type'            => 'related_post',
+               'repeatable'            => true,
+               'related_post_types'    => array('product'),
+
+               'field_label'           => 'Productos',
+               'description'           => '
+               <p class="fontXXS" style="font-size:10px">
+               ...
+               </p>
+               <p class="fontXXS" style="font-size:10px">
+               ...
+               </p>
+               ',
+               'markup_function'       => 'standard_metabox_markup'
+            ),
+
+         )
+
+      ),
 );
 
 function standard_metabox_markup( $post,  $callback_args ) {
