@@ -4,6 +4,9 @@
 
 
    <?php
+   set_query_var( 'pagina_a_cargar', get_page_by_title("Información")->ID );
+   get_template_part("secciones/00-compartidas/01-texto-descriptivo-seccion");
+
    $pagina_superior = get_page_by_title("Información");
    $paginas = get_pages( array('parent'=>$pagina_superior->ID));
 
@@ -14,7 +17,7 @@
       ?>
 
       <!-- primer bloque -->
-      <div id="<?php echo $clase; ?>-X" class="small-12 medium-6 large-3 columns p5 rel h_50 h_md_25 h_sm_25">
+      <div id="<?php echo $clase; ?>-<?php echo get_the_ID(); ?>" class="small-12 medium-6 large-3 columns p5 rel h_50 h_md_25 h_sm_25">
          <a href="<?php echo get_the_permalink($pagina->ID); ?>" class="h_100">
 
             <div id="<?php echo $clase; ?>-imagen" class="h_40 w_100 z0 imgLiquid imgLiquidNoFill">
@@ -44,8 +47,6 @@
 
    endforeach;
 
-   set_query_var( 'pagina_a_cargar', get_page_by_title("Información")->ID );
-   get_template_part("secciones/00-compartidas/01-texto-descriptivo-seccion");
    ?>
 
 

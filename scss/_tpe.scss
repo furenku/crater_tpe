@@ -1,9 +1,4 @@
 
-#principal {
-   section {
-      background-color: #f3f3f3;
-   }
-}
 * {
    // outline: 1px solid #effaff;
 }
@@ -73,6 +68,8 @@ h1,h2,h3,h4,h5,h6 {
 
 /* LAYOUT */
 
+
+
 #menu {
 
    &,nav,ul {
@@ -85,12 +82,31 @@ h1,h2,h3,h4,h5,h6 {
 
 
 
-#principal section {
-   margin-bottom: $spacing*4 !important;
+#principal  {
+   &>section {
+      margin-bottom: $spacing*4 !important;
+   }
 }
 
 
 
+
+
+
+.reticula-informacion {
+
+   min-height: 80vh;
+   height: 100vh;
+
+}
+
+
+.h_100min {
+   min-height: 100%;
+}
+
+.h_100vhmin {
+   min-height: 100vh;}
 
 
 
@@ -116,13 +132,6 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 
-
-.slick-arrow {
-   &,&:before,* {
-      color: $primario !important
-   }
-}
-
 form,
 .woocommerce-info,
 .woocommerce-billing-fields {
@@ -144,4 +153,36 @@ form,
 
    margin: $spacing 0;
 
+}
+
+
+
+
+/* COLORES */
+* {
+   color: #111;
+}
+a {
+   color: #000;
+   transition: color 0.3s ease-in-out;
+   &:hover {
+      color: #333;
+   }
+}
+
+#principal {
+   section {
+      background-color: #f3f3f3;
+   }
+}
+.slick-arrow {
+   &,&:before,* {
+      color: $primario !important
+   }
+}
+
+
+
+.cortina {
+   background-color: rgba( 255, 255, 255, 0.5 );
 }

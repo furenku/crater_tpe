@@ -35,10 +35,10 @@ foreach ($all_categories as $cat) :
       <div class="imagen h_25vh imgLiquid imgLiquidFill">
          <img src="<?php echo $image; ?>" alt="">
       </div>
-      <h3 class="p4">
+      <h3 class="p4 m0">
          <?php echo $cat->name; ?>
       </h3>
-      <p class="p4 text-left">
+      <p class="p4 pt0 text-left">
          <?php echo $cat->description; ?>
       </p>
    </a>

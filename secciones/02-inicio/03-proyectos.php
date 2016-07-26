@@ -1,3 +1,14 @@
+<?php
+
+$proyectos = get_posts(
+   array(
+      'post_type'=>'proyecto',
+      'posts_per_page'=>3
+   )
+);
+
+?>
+
 <section id="inicio-blog" class="contenedor_titular_interactivo small-12 columns p0 m0 ha">
 
    <h1 class="titular_interactivo">
@@ -5,8 +16,8 @@
    </h1>
 
    <?php
-   set_query_var( 'pagina_a_cargar', get_page_by_title("Proyectos")->ID );
 
+   set_query_var( 'pagina_a_cargar', get_page_by_title("Proyectos")->ID );
    get_template_part("secciones/00-compartidas/01-texto-descriptivo-seccion");
 
    ?>
@@ -19,21 +30,20 @@
 
 
          <div class="large-12 columns h_30 imgLiquid imgLiquidFill">
-            <img src="http://fakeimg.pl/250x320">
+            <?php echo get_the_post_thumbnail( $proyectos[0] -> ID, 'medium' ); ?>
          </div>
 
          <h3 id="inicio-blog-ultimo-titulo" class="large-12 columns p3 text-left">
-            Lorem ipsum dolor sit amet Fuga.
+            <?php echo apply_filters( 'the_title', $proyectos[0] -> post_title ); ?>
          </h3>
 
          <div id="inicio-blog-ultimo-fecha" class="large-12 columns p0 pr2 fontM font_md_S font_sm_XS text-right h_5">
-            <small>Publicado el </small>1 enero 1979
+            <small>Publicado el </small><?php echo get_the_date( 'd \d\e F\, Y', $proyectos[0] -> ID ); ?>
          </div>
 
          <div id="inicio-blog-ultimo-extracto" class="large-12 columns p3 pt0 text-left h_40">
             <div class="small-12 vcenter fontL pt0">
-               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga aut, minus quos a incidunt dolorem exercitationem explicabo enim sunt!.
-               consectetur adipisicing elit. Fuga aut, minus quos a incidunt dolorem. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+               <?php echo apply_filters( 'the_excerpt', $proyectos[0] -> post_excerpt ); ?>
             </div>
          </div>
 
@@ -56,20 +66,20 @@
 
 
             <div class="small-4 columns h_100 imgLiquid imgLiquidFill">
-               <img src="http://fakeimg.pl/250x320">
+               <?php echo get_the_post_thumbnail( $proyectos[ $i + 1 ] -> ID, 'medium' ); ?>
             </div>
 
             <h4 id="inicio-blog-secundarios-titulo" class="small-8 columns p3 font_sm_L font_md_M text-left">
-               Lorem ipsum dolor sit amet.
+               <?php echo apply_filters( 'the_title', $proyectos[ $i + 1 ] -> post_title ); ?>
             </h4>
 
             <div id="inicio-blog-secundarios-fecha" class="small-8  columns p0 pr2 fontS font_md_XS font_sm_XS text-right h_5">
-               <small>Publicado el 1 enero 1979</small>
+               <small>Publicado el </small><?php echo get_the_date( 'd \d\e F\, Y', $proyectos[ $i + 1 ] -> ID ); ?>
             </div>
 
             <div id="inicio-blog-secundarios-extracto" class="small-8 columns p3 pt2 fontM font_md_M font_sm_S text-left h_50">
                <div class="small-12 vcenter">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga aut, minus quos a incidunt dolorem exercitationem explicabo enim sunt!.
+                  <?php echo apply_filters( 'the_excerpt', $proyectos[ $i + 1 ] -> post_excerpt ); ?>
                </div>
             </div>
 

@@ -207,29 +207,29 @@ function cargar_coleccion() {
 	      ?>
 
 	      <!-- article.publicacion.small-6.medium-4.large-3.columns -->
-	      <article id="publicacion_<?php echo get_the_ID(); ?>" data-id="<?php echo get_the_ID(); ?>" class="publicacion small-12 medium-6 large-4 columns p5 h_60vh h_sm_70vh mb2">
-	         <header class="h_30 h_sm_20">
+	      <article id="publicacion_<?php echo get_the_ID(); ?>" data-id="<?php echo get_the_ID(); ?>" class="publicacion small-12 medium-6 large-4 columns p5 h_100 h_sm_70vh mb2">
+	         <header class="h_30 h_sm_15">
 	            <h6 class="">
 	               <?php echo apply_filters( 'the_title', get_the_title() ); ?>
 	            </h6>
 	            <div class="autor fontXXS h_a">
-	               <?php echo get_post_meta( get_the_ID(), 'autor', true ); ?>
+	               <?php echo "implementar autores"; ?>
 	            </div>
 	         </header>
-	         <section class="imagen h_30 h_sm_30 h_sm_30vh imgLiquid imgLiquidNoFill">
+	         <section class="imagen h_30 imgLiquid imgLiquidNoFill">
 	            <?php
 	            if( has_post_thumbnail() ) {
 	               echo get_the_post_thumbnail();
 	            }
 	            ?>
 	         </section>
-	         <section class="extracto columns h_20 h_sm_20 m0 p0">
-	            <div class="vcenter">
+	         <div class="extracto columns h_10 h_sm_10 m0 p0">
+	            <div class="">
 	               <p class="fontXXS mb0">
 	                  <?php echo  get_the_excerpt(); ?>
 	               </p>
 	            </div>
-	         </section>
+	         </div>
 	         <footer class="text-center h_20 h_sm_30">
 	            <div class="precio columns fontL h_a p2">
 	               <?php echo $precio; ?>

@@ -18,13 +18,15 @@
 
       <!-- primer bloque -->
       <div id="<?php echo $clase; ?>-X" class="small-12 medium-4 columns p5 rel h_50 h_md_25 h_sm_25">
+
          <a href="<?php echo get_the_permalink($pagina->ID); ?>" class="w_100 h_100">
 
             <div id="<?php echo $clase; ?>-imagen" class="h_100 w_100 absUpL imgLiquid imgLiquidFill">
                <?php echo get_the_post_thumbnail( $pagina -> ID, 'large' ); ?>
             </div>
+            
             <div class="titulo w_100  h_100 absUpL z1 pt1 m0">
-               <div class="vcenter w_100 h_a text-center color_blanco">
+               <div class="vcenter w_100 h_a text-center">
                   <h2>
                      <?php echo apply_filters( 'the_title', $pagina->post_title ); ?>
                   </h2>
