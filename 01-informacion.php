@@ -34,14 +34,44 @@ foreach ( $paginas_informacion as $pagina_informacion ): $i++;?>
 
       <?php
 
-      if( ! strcmp( $pagina_informacion->post_title, "Editoriales" ) ) $post_type = "editorial";
-      if( ! strcmp( $pagina_informacion->post_title, "Gente" ) ) $post_type = "persona";
-      if( ! strcmp( $pagina_informacion->post_title, "Proyectos" ) ) $post_type = "proyecto";
-      if( ! strcmp( $pagina_informacion->post_title, "Modelos" ) ) $post_type = "modelo_colaboracion";
+      $columns = "small-6 medium-4 large-3";
+
+      $custom_cpt = false;
+
+      if( ! strcmp( $pagina_informacion->post_title, "Editoriales" ) ) {
+         $post_type = "editorial";
+         $columns = "small-12 medium-6 large-4";
+         $custom_cpt = true;
+      }
 
 
-      $args = array( 'post_type' => $post_type, 'posts_per_page' => -1 );
-      // $args = array( 'posts_per_page' => -1 );
+      if( ! strcmp( $pagina_informacion->post_title, "Gente" ) ) {
+         $post_type = "persona";
+         $columns = "small-4 medium-3 large-2";
+         $custom_cpt = true;
+      }
+
+
+      if( ! strcmp( $pagina_informacion->post_title, "Proyectos" ) ) {
+         $post_type = "proyecto";
+         $columns = "small-6 medium-4 large-3";
+         $custom_cpt = true;
+      }
+
+
+
+
+
+      if( $custom_cpt ) {
+         $args = array( 'post_type' => $post_type, 'posts_per_page' => -1 );
+      }
+      else {
+         if( ! strcmp( $pagina_informacion->post_title, "Modelos de Colaboración" ) ) {
+            $args = array( 'post_type' => 'page', 'post_parent' => get_page_by_title('Modelos de Colaboración')->ID );
+         }
+         $columns = "small-12 medium-6 large-4";
+      }
+
 
       $q = new WP_Query( $args );
 
@@ -54,7 +84,7 @@ foreach ( $paginas_informacion as $pagina_informacion ): $i++;?>
             $ttl = apply_filters('the_title',get_the_title());
             ?>
 
-            <article id="informacion_<?php echo $ID; ?>" class="columns small-6 medium-4 large-3 h_40vh p5 rel">
+            <article id="informacion_<?php echo $ID; ?>" class="columns <?php echo $columns; ?> h_40vh p5 rel">
 
                <a href="<?php echo $link; ?>" class="w_100 h_100 rel">
                   <div class="imagen h_60 imgLiquid <?php echo $post_type == "persona" ? 'imgLiquidNoFill' : 'imgLiquidFill'; ?>">
