@@ -4,17 +4,21 @@ Template Name: Información
 */
 
 global $paginas_informacion;
+global $ID_actual;
+
 get_header();
 $i=0;
 
 foreach ( $paginas_informacion as $pagina_informacion ): $i++;?>
 
-<section id="pagina_informacion_<?php echo $pagina_informacion->ID; ?>" class="contenedor_titular_interactivo columns  h_a pt2">
+<?php $scrollOnLoad = $ID_actual == $pagina_informacion->ID ? ' data-scroll_on_load="true "' : ''; ?>
+
+<section id="pagina_informacion_<?php echo $pagina_informacion->ID; ?>" class="scroll_on_load_target contenedor_titular_interactivo columns  h_a pt2" <?php echo $scrollOnLoad; ?>>
 
 
-   <h2 class="titular_interactivo h_a">
+   <h1 class="titular_interactivo h_a">
       <?php echo apply_filters('the_title', $pagina_informacion->post_title); ?>
-   </h2>
+   </h1>
 
 
    <div class="small-12 columns ">
