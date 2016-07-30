@@ -4,11 +4,7 @@ if( is_page('Inicio') ) {
 
    get_template_part('secciones/02-inicio/00-portada');
 
-} else if( is_page('Catálogo') ) {
-
-   get_template_part('secciones/05-catalogo/00-portada');
-
-} else if( is_page('Carrito') ) {
+}else if( is_page('Carrito') ) {
 
    get_template_part('secciones/10-tienda/carrito');
 
@@ -24,6 +20,9 @@ if( is_page('Inicio') ) {
 
    if( $parent_titulo == "Información" || get_the_title() == "Información" ) {
       get_template_part('secciones/03-info/00-portada');
+   }
+   elseif( $parent_titulo == "Catálogo" || get_the_title() == "Catálogo" ) {
+      get_template_part('secciones/05-catalogo/00-portada');
    }
    else {
       get_template_part('secciones/00-general/page-0-portada');

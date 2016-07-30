@@ -1,3 +1,17 @@
+<?php
+
+global $ID_actual;
+if (have_posts()) {
+   while (have_posts()) {
+      the_post();
+
+      $ID_actual = get_the_ID();
+
+   }
+}
+
+?>
+
 <!doctype html>
 <html class="no-js" lang="en" dir="ltr">
 <head>

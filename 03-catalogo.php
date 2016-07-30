@@ -6,10 +6,11 @@ Template Name: Catálogo
 get_header();
 
 
-global $paginas_catalogo;
+global $paginas_hijas;
+global $ID_actual;
 
 $loader="";
-foreach($paginas_catalogo as $pagina):
+foreach($paginas_hijas as $pagina):
 
 
 
@@ -28,7 +29,9 @@ foreach($paginas_catalogo as $pagina):
 
 ?>
 
-   <section id="catalogo-<?php echo $identidad; ?>" class="catalogo-seccion p5 h_70vh h_sm_90vh mb3" data-scroll_target="<?php echo $pagina->ID; ?>">
+   <?php $scrollOnLoad = $ID_actual == $pagina->ID ? ' data-scroll_on_load="true "' : ''; ?>
+
+   <section id="catalogo-<?php echo $identidad; ?>" class="scroll_on_load_target catalogo-seccion p5 h_70vh h_sm_90vh mb3" data-scroll_target="<?php echo $pagina->ID; ?>" <?php echo $scrollOnLoad; ?>>
       <h1>
          <?php echo apply_filters('the_title', $pagina->post_title); ?>
       </h1>

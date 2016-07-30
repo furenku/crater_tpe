@@ -42,8 +42,8 @@ $(document).ready(function(){
 
 
    $('.scroll_on_load_target').each(function(){
+      
       var scrollOnLoad = $(this).data('scroll_on_load');
-
       if( scrollOnLoad ) {
          $('html,body').animate({scrollTop: $(this).offset().top - $('#cabecera-titular').height()+10 })
       }
