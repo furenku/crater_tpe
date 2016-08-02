@@ -32,15 +32,15 @@ $html_id = preg_replace('/[^A-Za-z0-9\-]/', '', $html_id );
 
             ?>
 
-            <article id="<?php echo $clase; ?>-<?php echo get_the_ID(); ?>" class="small-12 medium-6 columns p5 mb1 rel h_30vh h_md_25vh h_sm_25vh">
+            <article id="<?php echo $clase; ?>-<?php echo get_the_ID(); ?>" class="columns small-12 medium-6  h_25vh p5 pt0 mb1 rel">
                <a href="<?php echo get_the_permalink($pagina->ID); ?>" class="h_100">
 
-                  <div id="<?php echo $clase; ?>-imagen" class="h_60 w_100 z0 imgLiquid imgLiquidNoFill">
+                  <div id="<?php echo $clase; ?>-imagen" class="h_60 columns small-6 z0 imgLiquid imgLiquidNoFill">
                      <?php echo get_the_post_thumbnail( $pagina -> ID, 'medium' ); ?>
                   </div>
                   <div class="texto h_60 pt1 m0">
 
-                     <div id="<?php echo $clase; ?>-titulo" class="small-12 columns h_3em p2 font_md_L font_sm_M text-center">
+                     <div id="<?php echo $clase; ?>-titulo" class=" columns small-6 h_3em p2 font_md_L font_sm_M text-left">
                         <div class="vcenter h_a">
                            <h5>
                               <?php echo apply_filters( 'the_title', $pagina->post_title ); ?>
@@ -48,7 +48,7 @@ $html_id = preg_replace('/[^A-Za-z0-9\-]/', '', $html_id );
                         </div>
                      </div>
 
-                     <div id="<?php echo $clase; ?>-texto" class="small-12 columns h_30 p0 fontM font_md_S font_sm_XS text-left">
+                     <div id="<?php echo $clase; ?>-texto" class="small-12 columns h_50 p3 fontM font_md_S font_sm_XS text-left">
                         <?php echo apply_filters( 'the_excerpt', $pagina->post_excerpt ); ?>
                      </div>
 

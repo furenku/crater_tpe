@@ -16,16 +16,14 @@ div, header, footer, article, section, aside {
 /*********** RESETS ***********/
 
 
-nav {
-   ul {
-      margin: 0;
-      padding: 0;
-      li {
-         list-style: none;
-      }
+
+ul {
+   margin: 0;
+   padding: 0;
+   li {
+      list-style: none !important;
    }
 }
-
 
 
 
@@ -53,7 +51,7 @@ nav {
 h1,h2,h3,h4,h5,h6 {
    font-family: 'Lato', sans-serif;
 }
-* {
+div, p, li, i {
    font-family: 'Lato', sans-serif;
 }
 * {

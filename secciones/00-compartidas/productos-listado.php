@@ -1,6 +1,23 @@
 <?php
 
-$q = new WP_Query( array( 'post_type' => 'product' ) );
+global $product_cat;
+global $texto_boton;
+
+
+if( $texto_boton == "" ) {
+   $texto_boton = "Comprar";
+}
+$q = new WP_Query( array(
+   'post_type' => 'product',
+   'tax_query' => array(
+		array(
+			'taxonomy' => 'product_cat',
+			'field'    => 'id',
+			'terms'    => $product_cat->term_id
+		),
+	),
+
+) );
 
 if($q->have_posts()):
 
@@ -55,7 +72,7 @@ if($q->have_posts()):
                </div>
                <div class="comprar columns small-6 h_a">
                   <a href="#" class="publicacion-comprar button hollow fontXS" data-id="<?php echo get_the_ID(); ?>">
-                     Comprar
+                     <?php echo $texto_boton; ?>
                   </a>
                </div>
             </div>

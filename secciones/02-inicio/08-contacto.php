@@ -23,11 +23,20 @@ $html_id = preg_replace('/[^A-Za-z0-9\-]/', '', $html_id );
 
          <div class="vcenter">
             <ul class="small-12 h_80 text-left fontXL font_md_L font_sm_M vcenter">
-               <li class="small-12 h_a"><i class="fa fa-home">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt sunt ullam, minima.</i></li>
+               <li class="small-12 h_a">
+                  <i class="fa fa-home"></i>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt sunt ullam, minima.
+               </li>
                <br/>
-               <li class="small-12 h_a"><i class="fa fa-phone">+ 55 (55) 55555555</i></li>
+               <li class="small-12 h_a">
+                  <i class="fa fa-phone"></i>
+                  + 55 (55) 55555555
+               </li>
                <br/>
-               <li class="small-12 h_a"><i class="fa fa-home">contacto@crater.com</i></li>
+               <li class="small-12 h_a">
+                  <i class="fa fa-home"></i>
+                  contacto@crater.com
+               </li>
                <br/>
             </ul>
          </div>

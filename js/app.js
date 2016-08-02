@@ -15,6 +15,12 @@ $(document).ready(function(){
    u.shareH();
    u.shareW();
 
+   boton_scroll_portada();
+   function boton_scroll_portada() {
+      $('#inicio-portada-ver-mas').click(function(){
+         $('body,html').animate({ scrollTop:$(window).height() }, 600);
+      })
+   }
    interaccion_menu();
 
    interaccion_productos();
@@ -42,7 +48,7 @@ $(document).ready(function(){
 
 
    $('.scroll_on_load_target').each(function(){
-      
+
       var scrollOnLoad = $(this).data('scroll_on_load');
       if( scrollOnLoad ) {
          $('html,body').animate({scrollTop: $(this).offset().top - $('#cabecera-titular').height()+10 })

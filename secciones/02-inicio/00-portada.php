@@ -14,3 +14,14 @@ $inicio = get_page_by_title("Inicio");
    </div>
 
 </div>
+<div class="w_100 h_20vh absDownL text-center">
+
+   <div class="vcenter h_a">
+
+      <div id="inicio-portada-ver-mas" class="button hollow">
+         <h6>Ver más</h6>
+         <span class="fa fa-caret-down fontXL"></span>
+      </div>
+      
+   </div>
+</div>

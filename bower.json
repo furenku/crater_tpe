@@ -13,7 +13,8 @@
     "motion-ui": "~1.2.2",
     "imgLiquid": "^0.9.944",
     "slick-carousel": "slick.js#^1.6.0",
-    "jquery-appear": "^0.2.6"
+    "jquery-appear": "^0.2.6",
+    "font-awesome": "fontawesome#^4.6.3"
   },
   "ignore": [
     "**/.*",

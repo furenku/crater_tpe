@@ -30,6 +30,12 @@ function registrar_ctps() {
          'label_plural'=> 'Proyectos'
       ),
 
+      'taller' => array(
+         'post_type' => 'taller',
+         'label_single' => 'Taller',
+         'label_plural'=> 'Talleres'
+      ),
+
    );
 
    foreach( $cpts as $cpt ) {
