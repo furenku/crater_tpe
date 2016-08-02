@@ -6,21 +6,21 @@ $paginas_hijas = get_pages( array( 'child_of' => $post->ID, 'parent' => $post->I
 
 ?>
 
-<article class="rel mt0">
+<section id="page-portada" class="rel mt0">
 
 
    <div id="page-portada-contenido" class="w_100vw absUpL z1 imgLiquid imgLiquidFill h_100vh">
 
       <header class="h_20">
          <div class="vcenter h_a">
-            <h1 class="m0 p0">
+            <h1 class="m0 p5">
                <?php echo apply_filters( 'the_title', $post->post_title ); ?>
             </h1>
          </div>
       </header>
 
-      <section class="contenido h_50 columns medium-6">
-         <div class="vcenter h_a pl4 pr4">
+      <section class="contenido h_50 p5 columns medium-6">
+         <div class="vcenter h_a pl0 pr4 fontXL">
             <?php echo apply_filters( 'the_excerpt', $post->post_excerpt ); ?>
          </div>
       </section>
@@ -72,4 +72,5 @@ $paginas_hijas = get_pages( array( 'child_of' => $post->ID, 'parent' => $post->I
       <?php echo get_the_post_thumbnail(get_the_ID(),'full'); ?>
    </div>
 
-</article>
+
+</section>

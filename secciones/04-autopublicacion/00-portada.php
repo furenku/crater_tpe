@@ -1,75 +1,66 @@
 <?php
 
+// Catálogo
 global $paginas_hijas;
+$pagina_principal = get_page_by_title("Autopublicación");
 
-$paginas_hijas = get_pages( array( 'child_of' => $post->ID, 'parent' => $post->ID ) );
+$paginas_hijas = get_pages( array( 'parent' => $pagina_principal->ID, 'child_of' => $pagina_principal->ID ) );
+
 
 ?>
 
-<article class="rel mt0">
+
+<section id="catalogo-portada" class="portada rel p5">
+   <div class="imagen fondo w_100 z-1 absUpL imgLiquid imgLiquidFill">
+      <?php echo get_the_post_thumbnail($ID,'large'); ?>
+   </div>
+
+   <div class="columns medium-4 large-2 h_20 h mt2">
+         <h1 class="p5 pt0 pl0">
+            Autopublicación
+         </h1>
+   </div>
+   <div class="contenido columns medium-6 large-7 large-offset-1 end h_a p2 pt0 pb2 mb1 fontXL mt2">
+      <?php echo apply_filters( 'the_content', $pagina_principal->post_content ); ?>
+   </div>
 
 
-   <div id="page-portada-contenido" class="w_100vw absUpL z1 imgLiquid imgLiquidFill h_100vh">
 
-      <header class="h_20">
-         <div class="vcenter h_a">
-            <h1 class="m0 p0">
-               <?php echo apply_filters( 'the_title', $post->post_title ); ?>
-            </h1>
-         </div>
-      </header>
+   <!-- .row>(.columns.small-6.medium-3>a.h_100.w_100>h4{Título de Sección}+div.imagen.h_50.imgLiquid.imgLiquidFill>img[http://fakeimg.pl/320x240])*4 -->
+   <div class="columns medium-6 large-12 p5 pt0 h_40vh">
 
-      <section class="contenido h_50 columns medium-6">
-         <div class="vcenter h_a pl4 pr4">
-            <?php echo apply_filters( 'the_excerpt', $post->post_excerpt ); ?>
-         </div>
-      </section>
-
-      <section class="h_50 columns medium-6">
-
-         <?php
-
-         if( is_array( $paginas_hijas )  ) :
-            if( count( $paginas_hijas > 1 ) ) :
-
-               ?>
-
-               <nav class=" vcenter columns h_a">
-
-                  <?php
-
-                  foreach( $paginas_hijas as $pagina_hija ) :
-
-                     ?>
-
-                     <div class="h_a p5">
-                        <a href="<?php echo get_the_permalink( $pagina_hija -> ID ); ?>" class="w_100 h_100">
-                           <?php echo apply_filters( 'the_title', $pagina_hija->post_title ); ?>
-                        </a>
-                     </div>
-
-                     <?php
-
-                  endforeach;
-
-                  ?>
-
-                  <!-- </div> -->
-               </nav>
-
-               <?php
-
-            endif;
-         endif;
-
+      <?php foreach( $paginas_hijas as $pagina_hija ) :
+         $pagina_actual = $pagina_hija;
+         $ID = $pagina_hija -> ID;
+         $titulo = apply_filters('the_title', $pagina_hija -> post_title );
+         $texto = apply_filters('the_excerpt', $pagina_hija -> post_excerpt );
+         $link = get_the_permalink( $ID );
          ?>
+         <div class="columns medium-4 h_50vh p5 p_lg_5 text-center rel ">
 
-      </section>
+            <div class="p5 rel">
+               <div class="boton-scroll button p p3 p_lg_5 5 color_blanco_bg color_primario_hover_bg color_negro color_blanco_hover" data-scroll_to="<?php echo $ID; ?>">
+                  <div class="imagen absUpL w_100 imgLiquid imgLiquidFill z0">
+                     <?php echo get_the_post_thumbnail( $ID ); ?>
+                  </div>
+                  <div class="cortina absUpL w_100 z0">
+                  </div>
+                  <!-- <div class="cortina z1 h_100 w_100 absUpL"></div> -->
+
+                  <div class="texto absUpL z1 p5">
+                     <div class="vcenter text-left h_a">
+                        <h5 class="p5 fontXL m0"><?php echo $titulo; ?></h5>
+                        <div class="extracto fontL ls2 p5 pt0 pr2 text-left"><?php echo $texto; ?></div>
+                     </div>
+                  </div>
+               </div>
+
+            </div>
+         </div>
+
+
+      <?php endforeach; ?>
 
    </div>
 
-   <div id="page-portada-fondo" class="w_100vw absUpL z-1 imgLiquid imgLiquidFill h_100vh">
-      <?php echo get_the_post_thumbnail(get_the_ID(),'full'); ?>
-   </div>
-
-</article>
+</section>

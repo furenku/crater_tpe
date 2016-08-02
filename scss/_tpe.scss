@@ -26,6 +26,11 @@ ul {
 }
 
 
+img, iframe, .wp-caption {
+   width: 100% !important;
+}
+
+
 
 /*********** POR ACOMODAR: ***********/
 
@@ -48,6 +53,9 @@ ul {
 }
 
 
+
+/* ************** TIPOGRAFÍAS ************** */
+
 h1,h2,h3,h4,h5,h6 {
    font-family: 'Lato', sans-serif;
 }
@@ -61,7 +69,10 @@ h1,h2,h3,h4,h5,h6 {
    font-weight: 100 !important;
 }
 
-
+.wp-caption-text {
+   @extend  .fontM;
+   @extend .mb2;
+}
 
 
 /* LAYOUT */
@@ -104,7 +115,17 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .h_100vhmin {
-   min-height: 100vh;}
+   min-height: 100vh;
+}
+
+
+.contenido {
+   img, iframe, .wp-caption {
+      width: 100%;
+   }
+}
+
+
 
 
 
