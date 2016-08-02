@@ -36,11 +36,13 @@ $html_id = preg_replace('/[^A-Za-z0-9\-]/', '', $html_id );
                <a href="<?php echo get_the_permalink($pagina->ID); ?>" class="h_100">
 
                   <div id="<?php echo $clase; ?>-imagen" class="h_60 columns small-6 z0 imgLiquid imgLiquidNoFill">
+
                      <?php echo get_the_post_thumbnail( $pagina -> ID, 'medium' ); ?>
                   </div>
                   <div class="texto h_60 pt1 m0">
 
                      <div id="<?php echo $clase; ?>-titulo" class=" columns small-6 h_3em p2 font_md_L font_sm_M text-left">
+
                         <div class="vcenter h_a">
                            <h5>
                               <?php echo apply_filters( 'the_title', $pagina->post_title ); ?>
@@ -49,6 +51,7 @@ $html_id = preg_replace('/[^A-Za-z0-9\-]/', '', $html_id );
                      </div>
 
                      <div id="<?php echo $clase; ?>-texto" class="small-12 columns h_50 p3 fontM font_md_S font_sm_XS text-left">
+
                         <?php echo apply_filters( 'the_excerpt', $pagina->post_excerpt ); ?>
                      </div>
 
