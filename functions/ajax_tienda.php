@@ -209,12 +209,12 @@ function cargar_coleccion() {
 
 	      <!-- article.publicacion.small-6.medium-4.large-3.columns -->
 	      <article id="publicacion_<?php echo get_the_ID(); ?>" data-id="<?php echo get_the_ID(); ?>" class="publicacion small-12 medium-6 large-4 columns p5 h_100 h_sm_70vh mb2">
-	         <header class="h_10 h_sm_15">
-	            <h4 class="titulo">
+	         <header class="h_15 h_sm_15">
+	            <h5 class="titulo">
 	               <?php echo apply_filters( 'the_title', get_the_title() ); ?>
-	            </h4>
+	            </h5>
 	         </header>
-	         <section class="imagen h_30 imgLiquid imgLiquidNoFill">
+	         <section class="imagen h_25 imgLiquid imgLiquidNoFill">
 	            <?php
 	            if( has_post_thumbnail() ) {
 	               echo get_the_post_thumbnail();
@@ -226,8 +226,8 @@ function cargar_coleccion() {
                   <?php echo  get_the_excerpt(); ?>
                </p>
 	         </div>
-	         <footer class="text-center h_25 h_sm_30">
-	            <div class="precio columns fontXL h_a p4">
+	         <footer class="text-center h_20 h_sm_30">
+	            <div class="precio columns fontXL h_a p2">
 	               <?php echo $precio; ?>
 	            </div>
 	            <div class="acciones columns h_a">

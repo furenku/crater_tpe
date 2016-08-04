@@ -295,11 +295,15 @@ $screen-lg-min: 1025px;
 }
 .h_35 {
 	@extend .h;
-	height: 35%s;
+	height: 35%;
 }
 .h_40 {
 	@extend .h;
 	height: 40%;
+}
+.h_45 {
+	@extend .h;
+	height: 45%;
 }
 .h_50 {
 	@extend .h;
