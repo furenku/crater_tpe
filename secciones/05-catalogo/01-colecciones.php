@@ -27,21 +27,30 @@ foreach ($all_categories as $cat) :
    $category_id = $cat->term_id;
    ?>
 
-      <a href="<?php echo get_term_link($cat->slug, 'product_cat'); ?>" class="coleccion columns medium-6 button color_negro_bg color_blanco color_blanco_hover_bg color_negro_hover">
-      <?php
-      $thumbnail_id = get_woocommerce_term_meta( $cat->term_id, 'thumbnail_id', true );
-      $image = wp_get_attachment_url( $thumbnail_id );
-      ?>
-      <div class="imagen h_25vh imgLiquid imgLiquidFill">
-         <img src="<?php echo $image; ?>" alt="">
-      </div>
-      <h3 class="p4 m0">
-         <?php echo $cat->name; ?>
-      </h3>
-      <p class="p4 pt0 text-left">
-         <?php echo $cat->description; ?>
-      </p>
-   </a>
+      <a href="<?php echo get_term_link($cat->slug, 'product_cat'); ?>" class="coleccion columns medium-6 h_a p5">
+         <div class="button w_100 p0 color_blanco_bg color_negro color_secundario_hover_bg">
+
+            <?php
+            $thumbnail_id = get_woocommerce_term_meta( $cat->term_id, 'thumbnail_id', true );
+            $image = wp_get_attachment_url( $thumbnail_id );
+            ?>
+            <div class="columns p0 h_a">
+               <div class="imagen h_25vh imgLiquid imgLiquidFill">
+                  <img src="<?php echo $image; ?>" alt="">
+               </div>
+            </div>
+
+            <div class="columns h_a p4 pt1 m0">
+
+               <h4 class="titulo p0 m0">
+                  <?php echo $cat->name; ?>
+               </h4>
+               <p class="pt1 fontM text-left">
+                  <?php echo $cat->description; ?>
+               </p>
+            </div>
+         </div>
+      </a>
 
    <?php
 

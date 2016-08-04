@@ -272,6 +272,11 @@ $screen-lg-min: 1025px;
 	@extend .h;
 	height: 10%;
 }
+
+.h_15 {
+	@extend .h;
+	height: 15%;
+}
 .h_20 {
 	@extend .h;
 	height: 20%;
@@ -2041,7 +2046,7 @@ $screen-lg-min: 1025px;
 $white: #fff;
 $black: #000;
 $primario: #0bc1ed;
-$secundario: #4bd1fd;
+$secundario: #08c0eb;
 
 $lista_colores: (
   blanco   $white,

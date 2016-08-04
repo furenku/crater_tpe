@@ -181,6 +181,7 @@ add_action( 'wp_ajax_nopriv_cargar_coleccion', 'cargar_coleccion' );
 function cargar_coleccion() {
 
 	$ID = $_POST['id'];
+	$nombre_coleccion = $_POST['nombre_coleccion'];
 
 	$coleccion = array();
 
@@ -208,13 +209,10 @@ function cargar_coleccion() {
 
 	      <!-- article.publicacion.small-6.medium-4.large-3.columns -->
 	      <article id="publicacion_<?php echo get_the_ID(); ?>" data-id="<?php echo get_the_ID(); ?>" class="publicacion small-12 medium-6 large-4 columns p5 h_100 h_sm_70vh mb2">
-	         <header class="h_30 h_sm_15">
-	            <h6 class="">
+	         <header class="h_10 h_sm_15">
+	            <h4 class="titulo">
 	               <?php echo apply_filters( 'the_title', get_the_title() ); ?>
-	            </h6>
-	            <div class="autor fontXXS h_a">
-	               <?php echo "implementar autores"; ?>
-	            </div>
+	            </h4>
 	         </header>
 	         <section class="imagen h_30 imgLiquid imgLiquidNoFill">
 	            <?php
@@ -223,25 +221,23 @@ function cargar_coleccion() {
 	            }
 	            ?>
 	         </section>
-	         <div class="extracto columns h_10 h_sm_10 m0 p0">
-	            <div class="">
-	               <p class="fontXXS mb0">
-	                  <?php echo  get_the_excerpt(); ?>
-	               </p>
-	            </div>
+	         <div class="extracto columns h_20 h_sm_25 m0 p4">
+               <p class="fontS mb0 p0">
+                  <?php echo  get_the_excerpt(); ?>
+               </p>
 	         </div>
-	         <footer class="text-center h_20 h_sm_30">
-	            <div class="precio columns fontL h_a p2">
+	         <footer class="text-center h_25 h_sm_30">
+	            <div class="precio columns fontXL h_a p4">
 	               <?php echo $precio; ?>
 	            </div>
 	            <div class="acciones columns h_a">
 	               <div class="leer_mas columns small-6 h_a">
-	                  <a href="<?php echo get_the_permalink(); ?>" class="publicacion-leer_mas button hollow fontXS">
-	                     Leer más
+	                  <a href="<?php echo get_the_permalink(); ?>" class="publicacion-leer_mas button fontM">
+	                     Ver más
 	                  </a>
 	               </div>
 	               <div class="comprar columns small-6 h_a">
-	                  <a href="#" class="publicacion-comprar button hollow fontXS" data-id="<?php echo get_the_ID(); ?>">
+	                  <a href="#" class="publicacion-comprar button fontM" data-id="<?php echo get_the_ID(); ?>">
 	                     Comprar
 	                  </a>
 	               </div>
@@ -263,7 +259,7 @@ function cargar_coleccion() {
 
 	// $coleccion['publicaciones'] = $publicaciones;
 
-	die( json_encode( $coleccion ) );
+	die( json_encode( array('titulo'=>$nombre_coleccion, 'html'=>$coleccion) ) );
 
 }
 
