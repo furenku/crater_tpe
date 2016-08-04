@@ -11,6 +11,7 @@ $paginas_hijas = get_pages( array( 'child_of' => $pagina_principal->ID ) );
 
 
 <section id="catalogo-portada" class="portada rel p5">
+   
    <div class="imagen fondo w_100 z-1 absUpL imgLiquid imgLiquidFill">
       <?php echo get_the_post_thumbnail($ID,'large'); ?>
    </div>

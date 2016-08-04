@@ -29,8 +29,9 @@ if (have_posts()) {
 <body>
 
    <!-- section#portada -->
-   <section id="portada" class="row expanded p0 m0 h_100vh">
-      <div id="portada-variable" class="h_100vh">
+   <?php if( ! is_single() ) : ?>
+   <section id="portada" class="row expanded p0 m0 h_a">
+      <div id="portada-variable">
          <?php include_once 'secciones/01-portada/00-portada_variable.php'; ?>
       </div>
 
@@ -43,9 +44,8 @@ if (have_posts()) {
             </a>
          </div>
       </div>
-
-
    </section>
+   <?php endif; ?>
 
    <div id="area-stickies" class="row expanded h_a rel">
 

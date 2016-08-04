@@ -18,14 +18,14 @@ foreach ($paginas_hijas as $pagina_hija ) :
 
       <article class="pagina_hija columns small-12 medium-6 h_30vh p5 mb2">
 
+         <h4 class="mb1">
+            <?php echo apply_filters('the_title', $pagina_hija->post_title); ?>
+         </h4>
          <div class="imagen columns small-6 imgLiquid imgLiquidFill">
             <?php echo get_the_post_thumbnail($pagina_hija->ID); ?>
          </div>
          <div class="texto columns small-6">
             <div class="vcenter h_a">
-               <h5>
-                  <?php echo apply_filters('the_title', $pagina_hija->post_title); ?>
-               </h5>
                <div class="extracto fontS">
                   <?php echo apply_filters('the_excerpt', $pagina_hija->post_excerpt); ?>
                </div>

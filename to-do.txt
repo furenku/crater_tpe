@@ -1,6 +1,73 @@
-- Plantilla página jerárquica
+x Plantilla página jerárquica
+
 - Plantilla Suscripciones
    - Crear 3 productos-suscripción
 
-- Catálogo
-   - Añadir botones "comprar"
+
+- Inicio
+   - corregir links
+
+- Proyectos - Blog
+
+- Plantilla Proyectos
+
+
+
+revisando depth 1
+
+- Catálogo - ediciones unicas
+- Catálogo - proyectos
+- Catálogo - mejorar presentacion todo
+
+- Autopublicación: autoscroll tras link home
+- Autopublicación: mejorar fotos ap. tecnicas
+- Autopublicación: cambiar diseño talleres a algo horizontal mas compacto
+
+- plantilla proyectos
+
+- plantilla blog
+
+- mejorar menú e-commerce
+- mejorar interacción boton portada menu
+- inicio -> links en inicio
+- menu e-commerce
+- e-commerce: mi cuenta
+
+ADICIONALES
+
+- info - proyectos - enlistar participantes
+- evitar reload dentro de secc. info. (menu portada )
+
+
+
+
+
+PLANTILLAS
+
+
+Blog
+Single
+
+   Título
+   Extracto
+   Texto
+   Autor ?
+   Info
+         Editoriales
+         Personas
+         Productos
+         Talleres
+
+
+single-product
+
+   taller vs publicaciones vs ?
+
+   Info Venta:
+      Costo
+      Stock
+      Envío
+
+single-proyecto
+
+   Blog chico

@@ -1,62 +1,63 @@
-<?php
-get_header();
+   <?php
+   get_header();
+   if( have_posts() ) :
+      while ( have_posts() ) :
+
+         the_post();
+
+         $imgLiquidFill = is_singular('persona') ? 'imgLiquidNoFill' : 'imgLiquidFill';
+         $layout_imagen = is_singular('persona') ? 'medium-6 large-4 h_40vh' : 'h_40vh';
+         $layout_extracto = is_singular('persona') ? 'medium-6 large-8 h_40vh' : '';
+
+         ?>
+
+         <section id="single_<?php echo get_the_ID();?>" class="columns p5 h_a">
+
+            <article class="columns contenedor_titular_interactivo">
+
+               <header>
+                  <h1 class="titular_interactivo">
+                     <?php echo apply_filters('the_title', get_the_title()); ?>
+                  </h1>
 
 
-if( have_posts() ) :
-   while ( have_posts() ) :
+               </header>
 
-      the_post();
+               <section class="imagen <?php echo $layout_imagen; ?> columns imgLiquid <?php echo $imgLiquidFill; ?>">
+                  <?php echo get_the_post_thumbnail(get_the_ID(),'large'); ?>
+               </section>
 
-      $post_type = $post->post_type;
+               <section class="extracto <?php echo $layout_extracto; ?> columns mt1 mb1 p5 fontXL">
+                  <div class="vcenter h_a">
+                     <?php echo apply_filters('the_excerpt', get_the_excerpt()); ?>
+                  </div>
+               </section>
 
-      $related_cpts = array(
-         'editorial',
-         'persona',
-         'proyecto',
-         'product',
-         // 'modelo',
-      );
+               <section class="fecha mt1 mb1 text-left fontS">
+                  <?php echo get_the_date('d\, \d\e F\. Y'); ?>
+               </section>
 
-      echo '<h1>'. get_the_title() .'</h1>';
+               <section class="contenido mt1 fontL">
+                  <?php echo apply_filters('the_content', get_the_content()); ?>
+               </section>
 
-      foreach ($related_cpts as $related_cpt ) :
+               <footer class="posts_relacionados columns p5 fontS">
+                  <?php get_template_part('secciones/00-compartidas/posts_relacionados'); ?>
+               </footer>
 
-         $cpt_plural = get_post_type_object( $related_cpt )->labels->name;
+            </article>
 
-         $related_cpt_posts = get_post_meta( get_the_ID(), $post_type . '-' . $related_cpt, true );
-
-         if( is_array( $related_cpt_posts ) ) :
-            ?>
-            <section id="related_<?php echo $related_cpt_post; ?>" class="shareW p5">
-
-               <h2>
-                  <?php echo $cpt_plural; ?>
-               </h2>
-               <?php
-
-
-            foreach( $related_cpt_posts as $related_cpt_post ) :
-                  if( (int)($related_cpt_post) ):
-                     ?>
-                     <a href="<?php echo get_the_permalink( $related_cpt_post ); ?>">
-                        <h3>
-                           <?php echo get_post( $related_cpt_post ) -> post_title; ?>
-                        </h3>
-                     </a>
-                     <?php
-                  endif;
-
-            endforeach;
-
-            ?>
          </section>
+
+
+         <script type="text/javascript">
+
+            $(window).trigger('resize');
+
+         </script>
          <?php
 
-         endif;
+      endwhile;
+   endif;
 
-      endforeach;
-
-   endwhile;
-endif;
-
-get_footer();
+   get_footer();

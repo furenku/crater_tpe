@@ -31,6 +31,7 @@ $(document).ready(function(){
 
    catalogo_sliders();
 
+   colocar_titulares_al_scrollear();
 
 
 
