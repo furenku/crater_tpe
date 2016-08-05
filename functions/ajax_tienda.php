@@ -202,7 +202,7 @@ function cargar_coleccion( $nombre_coleccion ) {
 			?>
 
 			<!-- article.publicacion.small-6.medium-4.large-3.columns -->
-			<article id="publicacion_<?php echo get_the_ID(); ?>" data-id="<?php echo get_the_ID(); ?>" class="publicacion small-12 medium-6 large-4 columns p5 h_100 h_sm_70vh mb2">
+			<article id="publicacion_<?php echo get_the_ID(); ?>" data-id="<?php echo get_the_ID(); ?>" class="publicacion columns medium-6 large-4 h_70vh p4">
 				<header class="h_15 h_sm_15">
 					<h5 class="titulo">
 						<?php echo apply_filters( 'the_title', get_the_title() ); ?>

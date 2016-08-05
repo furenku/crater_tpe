@@ -4,15 +4,14 @@
 global $paginas_hijas;
 $pagina_principal = get_page_by_title("Autopublicación");
 
-$paginas_hijas = get_pages( array( 'parent' => $pagina_principal->ID, 'child_of' => $pagina_principal->ID ) );
-
+$paginas_hijas = get_pages( array( 'parent' => $pagina_principal->ID, 'child_of' => $pagina_principal->ID, 'sort_column' => 'menu_order', 'sort_order' => 'asc' ) );
 
 ?>
 
 
 <section id="catalogo-portada" class="portada h_100vh rel p5">
    <div class="imagen fondo w_100 z-1 absUpL imgLiquid imgLiquidFill">
-      <?php echo get_the_post_thumbnail($ID,'large'); ?>
+      <?php echo get_the_post_thumbnail( $pagina_principal->ID,'large'); ?>
    </div>
 
    <div class="columns medium-4 large-2 h_20 h mt2">
@@ -38,16 +37,15 @@ $paginas_hijas = get_pages( array( 'parent' => $pagina_principal->ID, 'child_of'
          ?>
          <div class="columns medium-4 h_50vh p5 p_lg_5 text-center rel ">
 
-            <div class="p5 rel">
-               <div class="boton-scroll button p p3 p_lg_5 5 color_blanco_bg color_primario_hover_bg color_negro color_blanco_hover" data-scroll_to="<?php echo $ID; ?>">
-                  <div class="imagen absUpL w_100 imgLiquid imgLiquidFill z0">
-                     <?php echo get_the_post_thumbnail( $ID ); ?>
+            <div class="p5 w_100 rel">
+               <div class="boton-scroll w_100 button p p3 p_lg_5 5 color_primario_hover_bg color_negro color_blanco_hover" data-scroll_to="<?php echo $ID; ?>">
+                  <div class="imagen absUpL w_100 h_100 imgLiquid imgLiquidFill z0">
+                     <?php echo get_the_post_thumbnail( $ID, 'medium' ); ?>
                   </div>
-                  <div class="cortina absUpL w_100 z0">
-                  </div>
+                  <!-- <div class="cortina absUpL w_100 z0"></div> -->
                   <!-- <div class="cortina z1 h_100 w_100 absUpL"></div> -->
 
-                  <div class="texto absUpL z1 p5">
+                  <div class="texto absUpL z1 p5 txsh">
                      <div class="vcenter text-left h_a">
                         <h5 class="p5 fontXL m0"><?php echo $titulo; ?></h5>
                         <div class="extracto fontL ls2 p5 pt0 pr2 text-left"><?php echo $texto; ?></div>

@@ -10,6 +10,14 @@ if (have_posts()) {
    }
 }
 
+if(
+   is_page('Catálogo') ||
+   in_array( get_page_by_title('Tienda')->ID, get_post_ancestors($post) )
+) {
+
+   $is_ecommerce = true;
+}
+
 ?>
 
 <!doctype html>
@@ -52,15 +60,19 @@ if (have_posts()) {
       <header id="cabecera" class="row expanded h_5em" data-sticky-container>
          <div class="sticky w_100 color_blanco_bg z1 h_5em" data-sticky data-anchor="area-stickies" data-margin-top="0">
 
-            <div id="cabecera-titular" class="columns">
+            <div id="cabecera-titular" class="columns <?php echo $is_ecommerce ? 'medium-5 large-4' : ''; ?>"></div>
 
-               <?php
+            <?php
+            if( $is_ecommerce ):
+            ?>
 
-               if( is_page('Catálogo') || in_array( get_page_by_title('Tienda')->ID, get_post_ancestors($post) ) )
-                  get_template_part('secciones/00-general/menu-ecommerce'); ?>
+            <nav id="menu-ecommerce" class="columns <?php echo $is_ecommerce ? 'medium-5 large-6 end' : ''; ?> h_5vh color_blanco_bg" data-sticky-container>
+               <div class="sticky columns h_a p3" data-sticky data-anchor="area-stickies" data-stick-to="top">
+                  <?php get_template_part('secciones/00-general/menu-ecommerce'); ?>
+               </div>
+            </nav>
 
-            </div>
-
+            <?php endif; ?>
 
          </div>
 

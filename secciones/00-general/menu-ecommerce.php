@@ -6,7 +6,7 @@ global $woocommerce;
 
       <a href="<?php echo WC()->cart->get_cart_url(); ?>">
 
-         <li id="ecommerce-nav-carrito" class="columns medium-3 fontXXS">
+         <li id="ecommerce-nav-carrito" class="columns medium-3 fontS">
             <div class="etiqueta columns small-6">
                Carrito
             </div>
@@ -25,7 +25,7 @@ global $woocommerce;
       #if ( $woocommerce->cart->get_cart_contents_count > 0 ) :
       ?>
       <a href="<?php echo $woocommerce->cart->get_checkout_url(); ?>">
-         <li class="columns medium-3 fontXXS">
+         <li class="columns medium-3 fontS">
             Realizar compra
          </li>
       </a>
@@ -34,13 +34,13 @@ global $woocommerce;
 
 
       <a href="#">
-         <li class="columns medium-3 fontXXS">
+         <li class="columns medium-3 fontS">
             Mi cuenta
          </li>
       </a>
 
       <a href="#">
-         <li class="columns medium-3 fontXXS">
+         <li class="columns medium-3 fontS">
             Salir/Registrarse
          </li>
       </a>

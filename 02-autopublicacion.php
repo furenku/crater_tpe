@@ -22,7 +22,7 @@ foreach( $info_paginas as $nombre => $template ) :
 
 ?>
 
-<section class="paginas_hijas contenedor_titular_interactivo columns h_a p5" data-scroll_target="<?php echo $pagina->ID; ?>" <?php echo $scrollOnLoad; ?>>
+<section class="paginas_hijas contenedor_titular_interactivo columns h_a p5 scroll_on_load_target" data-scroll_target="<?php echo $pagina->ID; ?>" <?php echo $scrollOnLoad; ?>>
 
 <?php
 $pagina_actual = get_page_by_title($nombre);

@@ -10,10 +10,11 @@
 
 - Plantilla Proyectos
 
-
+- Implementar Dark/Light
 
 revisando depth 1
 
+- corregir page? (ver subpag servicio de imp.)
 
 - Catálogo - mejorar presentacion todo
 
