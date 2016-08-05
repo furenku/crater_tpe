@@ -174,89 +174,95 @@ function clear_cart() {
 
 
 
-
-add_action( 'wp_ajax_cargar_coleccion', 'cargar_coleccion' );
-add_action( 'wp_ajax_nopriv_cargar_coleccion', 'cargar_coleccion' );
-
-function cargar_coleccion() {
-
-	$ID = $_POST['id'];
-	$nombre_coleccion = $_POST['nombre_coleccion'];
+function cargar_coleccion( $nombre_coleccion ) {
 
 	$coleccion = array();
+	$catID = get_term_by('name',$nombre_coleccion,'product_cat')->term_ID;
 
-	$q = new WP_Query( array( 'post_type' => 'product' ) );
+	$q = new WP_Query( array( 'post_type' => 'product',  'cat' => $catID ) );
 
 	if($q->have_posts()):
 
 		ob_start();
 
-	   while($q->have_posts()):
+		while($q->have_posts()):
 
-	      $q->the_post();
-
-
-	      $precio = 0;
-	      $precio = get_post_meta(get_the_ID(),'_sale_price',true);
-	      if( $precio == "" || ! $precio  ) {
-	         $precio = get_post_meta(get_the_ID(),'_regular_price',true);
-	      }
-
-	      $precio = get_woocommerce_currency_symbol() . $precio;
+			$q->the_post();
 
 
-	      ?>
+			$precio = 0;
+			$precio = get_post_meta(get_the_ID(),'_sale_price',true);
+			if( $precio == "" || ! $precio  ) {
+				$precio = get_post_meta(get_the_ID(),'_regular_price',true);
+			}
 
-	      <!-- article.publicacion.small-6.medium-4.large-3.columns -->
-	      <article id="publicacion_<?php echo get_the_ID(); ?>" data-id="<?php echo get_the_ID(); ?>" class="publicacion small-12 medium-6 large-4 columns p5 h_100 h_sm_70vh mb2">
-	         <header class="h_15 h_sm_15">
-	            <h5 class="titulo">
-	               <?php echo apply_filters( 'the_title', get_the_title() ); ?>
-	            </h5>
-	         </header>
-	         <section class="imagen h_25 imgLiquid imgLiquidNoFill">
-	            <?php
-	            if( has_post_thumbnail() ) {
-	               echo get_the_post_thumbnail();
-	            }
-	            ?>
-	         </section>
-	         <div class="extracto columns h_20 h_sm_25 m0 p4">
-               <p class="fontS mb0 p0">
-                  <?php echo  get_the_excerpt(); ?>
-               </p>
-	         </div>
-	         <footer class="text-center h_20 h_sm_30">
-	            <div class="precio columns fontXL h_a p2">
-	               <?php echo $precio; ?>
-	            </div>
-	            <div class="acciones columns h_a">
-	               <div class="leer_mas columns small-6 h_a">
-	                  <a href="<?php echo get_the_permalink(); ?>" class="publicacion-leer_mas button fontM">
-	                     Ver más
-	                  </a>
-	               </div>
-	               <div class="comprar columns small-6 h_a">
-	                  <a href="#" class="publicacion-comprar button fontM" data-id="<?php echo get_the_ID(); ?>">
-	                     Comprar
-	                  </a>
-	               </div>
-	            </div>
-	         </footer>
+			$precio = get_woocommerce_currency_symbol() . $precio;
 
-	      </article>
 
-	      <?php
+			?>
 
-	   endwhile;
+			<!-- article.publicacion.small-6.medium-4.large-3.columns -->
+			<article id="publicacion_<?php echo get_the_ID(); ?>" data-id="<?php echo get_the_ID(); ?>" class="publicacion small-12 medium-6 large-4 columns p5 h_100 h_sm_70vh mb2">
+				<header class="h_15 h_sm_15">
+					<h5 class="titulo">
+						<?php echo apply_filters( 'the_title', get_the_title() ); ?>
+					</h5>
+				</header>
+				<section class="imagen h_25 imgLiquid imgLiquidNoFill">
+					<?php
+					if( has_post_thumbnail() ) {
+						echo get_the_post_thumbnail();
+					}
+					?>
+				</section>
+				<div class="extracto columns h_20 h_sm_25 m0 p4">
+					<p class="fontS mb0 p0">
+						<?php echo  get_the_excerpt(); ?>
+					</p>
+				</div>
+				<footer class="text-center h_20 h_sm_30">
+					<div class="precio columns fontXL h_a p2">
+						<?php echo $precio; ?>
+					</div>
+					<div class="acciones columns h_a">
+						<div class="leer_mas columns small-6 h_a">
+							<a href="<?php echo get_the_permalink(); ?>" class="publicacion-leer_mas button fontM">
+								Ver más
+							</a>
+						</div>
+						<div class="comprar columns small-6 h_a">
+							<a href="#" class="publicacion-comprar button fontM" data-id="<?php echo get_the_ID(); ?>">
+								Comprar
+							</a>
+						</div>
+					</div>
+				</footer>
+
+			</article>
+
+		<?php
+
+		endwhile;
 
 		$coleccion = ob_get_contents();
 
 		ob_end_clean();
 
-
 	endif;
 
+	return $coleccion;
+
+}
+
+add_action( 'wp_ajax_cargar_coleccion', 'cargar_coleccion_ajax' );
+add_action( 'wp_ajax_nopriv_cargar_coleccion', 'cargar_coleccion_ajax' );
+
+function cargar_coleccion_ajax() {
+
+	$ID = $_POST['id'];
+	$nombre_coleccion = $_POST['nombre_coleccion'];
+
+	$coleccion = cargar_coleccion( $ID, $nombre_coleccion );
 	// $coleccion['publicaciones'] = $publicaciones;
 
 	die( json_encode( array('titulo'=>$nombre_coleccion, 'html'=>$coleccion) ) );

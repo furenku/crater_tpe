@@ -19,7 +19,7 @@ foreach($paginas_hijas as $pagina):
       $columnas = [3,2,1];
    elseif( $pagina->post_title == "Ediciones Únicas" ) :
       $template = "02-ediciones_unicas";
-      $columnas = [4,3,2];
+      $columnas = [3,3,2];
    elseif( $pagina->post_title == "Proyectos" ) :
       $template = "03-proyectos";
       $columnas = [2,1,1];
@@ -31,14 +31,14 @@ foreach($paginas_hijas as $pagina):
 
    <?php $scrollOnLoad = $ID_actual == $pagina->ID ? ' data-scroll_on_load="true "' : ''; ?>
 
-   <section id="catalogo-<?php echo $identidad; ?>" class="scroll_on_load_target catalogo-seccion p5 h_90vh h_sm_90vh mb3" data-scroll_target="<?php echo $pagina->ID; ?>" <?php echo $scrollOnLoad; ?>>
+   <section id="catalogo-<?php echo $identidad; ?>" class="contenedor_titular_interactivo scroll_on_load_target catalogo-seccion p5 h_90vh h_sm_90vh mb3" data-scroll_target="<?php echo $pagina->ID; ?>" <?php echo $scrollOnLoad; ?>>
 
       <div class="columns small-8 medium-9 large-10 h_15 ">
-
-         <h1 class="titulo_principal">
+         <h1 class="titulo_principal titular_interactivo">
             <?php echo apply_filters('the_title', $pagina->post_title); ?>
          </h1>
       </div>
+
       <div class="boton-regresar button columns small-4 medium-3 large-2  h_15 op0 fontL color_blanco">
          <div class="columns small-2 text-left p0">
             <div class="vcenter h_a">
@@ -51,7 +51,8 @@ foreach($paginas_hijas as $pagina):
             </div>
          </div>
       </div>
-      <div class="elementos columns h_85" data-columnas="<?php echo json_encode($columnas); ?>">
+
+      <div class="elementos columns h_80" data-columnas="<?php echo json_encode($columnas); ?>">
          <?php
          get_template_part( "secciones/05-catalogo/" . $template );
          ?>

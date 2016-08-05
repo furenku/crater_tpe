@@ -118,14 +118,12 @@ function interaccion_colecciones() {
 
 function activar_colecciones(e) {
 
-   id = 0;
    var nombre_coleccion = $(this).find('.titulo').html();
 
    var ajaxData = {
       type:"POST",
       url: tpe_ajax.ajaxurl,
       data: {
-         id: id,
          nombre_coleccion: nombre_coleccion,
          action: 'cargar_coleccion'
       },

@@ -1,1 +1,5 @@
-<?php get_template_part("secciones/00-compartidas/productos-listado"); ?>
+<?php
+$coleccion = cargar_coleccion( 'Proyectos' );
+
+echo $coleccion;
+?>
