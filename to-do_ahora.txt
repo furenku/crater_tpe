@@ -1,0 +1,4 @@
+
+o Autopublicación: autoscroll tras link home
+- Autopublicación: corregir titular interactivo
+- Autopublicación: cambiar diseño talleres a algo horizontal mas compacto

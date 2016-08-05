@@ -1,4 +1,3 @@
-x Plantilla página jerárquica
 
 - Plantilla Suscripciones
    - Crear 3 productos-suscripción
@@ -16,16 +15,10 @@ x Plantilla página jerárquica
 revisando depth 1
 
 
-Catálogo - mejorar presentacion todo
-
-- Autopublicación: autoscroll tras link home
-- Autopublicación: corregir titular interactivo
-- Autopublicación: cambiar diseño talleres a algo horizontal mas compacto
+- Catálogo - mejorar presentacion todo
 
 - quitar boton menu error en home tras scroll inicial
 
-X Catálogo - ediciones unicas
-X Catálogo - proyectos
 
 - plantilla proyectos
 

@@ -11,9 +11,17 @@ $(document).ready(function(){
       fill:false
    });
 
-   u.vcenter();
-   u.shareH();
-   u.shareW();
+   $(window).on('resize',function(){
+
+      u.vcenter();
+      u.shareH();
+      u.shareW();
+      u.squareH();
+
+   })
+
+   $(window).trigger('resize');
+
 
    boton_scroll_portada();
    function boton_scroll_portada() {

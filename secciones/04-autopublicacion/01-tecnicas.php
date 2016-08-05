@@ -5,18 +5,18 @@ global $pagina_actual;
 $paginas_hijas = get_pages( array( 'child_of' => $pagina_actual   ->ID ) );
 ?>
 
-<h1>
-   <?php echo apply_filters('the_title', $pagina_actual->post_title); ?>
-</h1>
 
-<section class="columns paginas_hijas h_90vh p5">
+
+   <h1 class="titular_interactivo">
+      <?php echo apply_filters('the_title', $pagina_actual->post_title); ?>
+   </h1>
    <?php
 
    foreach ($paginas_hijas as $pagina_hija ) :
 
       ?>
 
-      <article class="pagina_hija button hollow columns small-12 medium-6 large-4 h_30vh p5 rel">
+      <article class="pagina_hija squareH columns small-12 medium-6 large-4 p0 rel">
 
          <a href="<?php echo get_the_permalink( $pagina_hija->ID ); ?>">
 
@@ -26,12 +26,12 @@ $paginas_hijas = get_pages( array( 'child_of' => $pagina_actual   ->ID ) );
 
             </div>
 
-            <div class="texto w_100 h_100 absUpL z1 ">
+            <div class="texto w_100 h_100 absUpL z1 p4">
 
                <div class="vcenter h_a">
-                  <h4 class="text-center p2">
+                  <h1 class="text-center p2 color_blanco txsh1 fontXXL">
                      <?php echo apply_filters('the_title', $pagina_hija->post_title); ?>
-                  </h4>
+                  </h1>
                </div>
 
             </div>
@@ -47,5 +47,3 @@ $paginas_hijas = get_pages( array( 'child_of' => $pagina_actual   ->ID ) );
    endforeach;
 
    ?>
-
-</section>

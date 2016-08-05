@@ -32,13 +32,14 @@ $all_categories = get_categories( $args );
 
 ?>
 
-<h1>
-   <?php echo apply_filters('the_title', $pagina_actual->post_title); ?>
-</h1>
 
-<section class="columns paginas_hijas h_a p5">
 
-   <?php get_template_part("secciones/00-compartidas/productos-listado"); ?>
+<section class="paginas_hijas contenedor_titular_interactivo columns h_a p5">
 
+   <h1 class="titular_interactivo">
+      <?php echo apply_filters('the_title', $pagina_actual->post_title); ?>
+   </h1>
+
+   <?php echo cargar_coleccion("Talleres"); ?>
 
 </section>
