@@ -177,8 +177,12 @@ function clear_cart() {
 function cargar_coleccion( $nombre_coleccion ) {
 
 	$coleccion = array();
-	$catID = get_term_by('name',$nombre_coleccion,'product_cat')->term_ID;
 
+	$cat = get_term_by('name',$nombre_coleccion,'product_cat');
+	$catID = $cat->term_id;
+
+	if( ! strcmp( $cat->name, "Talleres" ) )
+		
 	$q = new WP_Query( array( 'post_type' => 'product',  'cat' => $catID ) );
 
 	if($q->have_posts()):

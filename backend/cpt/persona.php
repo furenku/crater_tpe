@@ -1,4 +1,0 @@
-<?php
-/* CPT PERSONA */
-
-?>

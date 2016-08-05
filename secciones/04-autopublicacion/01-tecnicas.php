@@ -25,10 +25,12 @@ $paginas_hijas = get_pages( array( 'child_of' => $pagina_actual   ->ID ) );
                   <?php echo get_the_post_thumbnail($pagina_hija->ID); ?>
                </div>
 
+               <!-- <div class="cortina w_100  h_100 absUpL z0"></div> -->
+
                <div class="texto w_100 h_100 absUpL z1 p4">
 
                   <div class="vcenter h_a">
-                     <h3 class="text-center p2 color_blanco font1 bold txsh">
+                     <h3 class="text-center p2 color_blanco font1 txsh">
                         <?php echo apply_filters('the_title', $pagina_hija->post_title); ?>
                      </h3>
                   </div>

@@ -1,3 +1,6 @@
+- Metabox taller no guarda
+
+- Autopublicación: corregir titular interactivo
 
 - Plantilla Suscripciones
    - Crear 3 productos-suscripción
@@ -10,7 +13,11 @@
 
 - Plantilla Proyectos
 
-- Implementar Dark/Light
+- Implementar Regresar
+
+- Breadcrumbs
+
+? Implementar Dark/Light
 
 revisando depth 1
 
