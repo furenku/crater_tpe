@@ -181,8 +181,13 @@ function cargar_coleccion( $nombre_coleccion ) {
 	$cat = get_term_by('name',$nombre_coleccion,'product_cat');
 	$catID = $cat->term_id;
 
-	if( ! strcmp( $cat->name, "Talleres" ) )
-		
+	$columnas_imagen = "columns";
+	$columnas_texto = "columns";
+
+	if( ! strcmp( $cat->name, "Talleres" ) ) {
+		$columnas_imagen 		= "columns small-4";
+		$columnas_texto 		= "columns small-8";
+	}
 	$q = new WP_Query( array( 'post_type' => 'product',  'cat' => $catID ) );
 
 	if($q->have_posts()):
@@ -206,41 +211,44 @@ function cargar_coleccion( $nombre_coleccion ) {
 			?>
 
 			<!-- article.publicacion.small-6.medium-4.large-3.columns -->
-			<article id="publicacion_<?php echo get_the_ID(); ?>" data-id="<?php echo get_the_ID(); ?>" class="publicacion columns medium-6 large-4 h_70vh p4">
-				<header class="h_15 h_sm_15">
+			<article id="publicacion_<?php echo get_the_ID(); ?>" data-id="<?php echo get_the_ID(); ?>" class="publicacion columns medium-6 large-4 h_50vh h_sm_50vh p4">
+				<header class="h_15">
 					<h5 class="titulo">
 						<?php echo apply_filters( 'the_title', get_the_title() ); ?>
 					</h5>
 				</header>
-				<section class="imagen h_25 imgLiquid imgLiquidNoFill">
+				<section class="imagen <?php echo $columnas_imagen; ?> h_45 imgLiquid imgLiquidNoFill">
 					<?php
 					if( has_post_thumbnail() ) {
 						echo get_the_post_thumbnail();
 					}
 					?>
 				</section>
-				<div class="extracto columns h_20 h_sm_25 m0 p4">
-					<p class="fontS mb0 p0">
-						<?php echo  get_the_excerpt(); ?>
-					</p>
+				<div class="producto-texto <?php echo $columnas_texto; ?> h_40 p0">
+					<div class="extracto columns h_70 h_sm_40 m0 p3 pl0 pr0 fontM">
+							<?php echo apply_filters('the_excerpt', get_the_excerpt()); ?>
+					</div>
+					<footer class="columns h_30 h_sm_60 text-center">
+
+						<div class="precio columns h_40 fontXL h_a p2">
+							<?php echo $precio; ?>
+						</div>
+
+						<div class="acciones columns h_60 p2">
+							<div class="leer_mas columns small-6">
+								<a href="<?php echo get_the_permalink(); ?>" class="publicacion-leer_mas button columns fontM">
+									Ver más
+								</a>
+							</div>
+							<div class="comprar  columns small-6">
+								<a href="#" class="publicacion-comprar button columns fontM" data-id="<?php echo get_the_ID(); ?>">
+									Comprar
+								</a>
+							</div>
+						</div>
+
+					</footer>
 				</div>
-				<footer class="text-center h_20 h_sm_30">
-					<div class="precio columns fontXL h_a p2">
-						<?php echo $precio; ?>
-					</div>
-					<div class="acciones columns h_a">
-						<div class="leer_mas columns small-6 h_a">
-							<a href="<?php echo get_the_permalink(); ?>" class="publicacion-leer_mas button fontM">
-								Ver más
-							</a>
-						</div>
-						<div class="comprar columns small-6 h_a">
-							<a href="#" class="publicacion-comprar button fontM" data-id="<?php echo get_the_ID(); ?>">
-								Comprar
-							</a>
-						</div>
-					</div>
-				</footer>
 
 			</article>
 

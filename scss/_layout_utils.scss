@@ -2050,13 +2050,15 @@ $screen-lg-min: 1025px;
 $white: #fff;
 $black: #000;
 $primario: #0bc1ed;
-$secundario: #08c0eb;
+$secundario: #06a0bb;
+$terciario: #00f070;
 
 $lista_colores: (
   blanco   $white,
   negro   $black,
   primario   $primario,
-  secundario $secundario
+  secundario $secundario,
+  terciario $terciario
 );
 
 
@@ -2064,34 +2066,36 @@ $lista_colores: (
 
 
 	   .color_#{nth($value, 1)} {
-			&,* {
+			& {
 				color: nth($value, 2) !important;
 			}
 	   }
 	   .color_#{nth($value, 1)}_bg {
-			&,* {
+			& {
 				background-color: nth($value, 2) !important;
 			}
 	   }
 	   .color_#{nth($value, 1)}_bd {
-			&,* {
-				border: nth($value, 2) !important;
+			& {
+				border: 1px solid white;
+				border-color: nth($value, 2) !important;
 			}
 	   }
 
 	   .color_#{nth($value, 1)}_hover:hover {
-			&,* {
+			& {
 				color: nth($value, 2) !important;
 			}
 	   }
 	   .color_#{nth($value, 1)}_hover_bg:hover {
-			&,* {
+			& {
 				background-color: nth($value, 2) !important;
 			}
 	   }
 	   .color_#{nth($value, 1)}_hover_bd:hover {
-			&,* {
-				border: nth($value, 2) !important;
+			& {
+				border: 1px solid white;
+				border-color: nth($value, 2) !important;
 			}
 	   }
 

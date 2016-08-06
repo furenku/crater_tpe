@@ -1,3 +1,4 @@
+X Autopublicación: cambiar diseño talleres a algo horizontal mas compacto
 X Autopublicación: autoscroll tras link home
 X Catálogo - ediciones unicas
 X Catálogo - proyectos

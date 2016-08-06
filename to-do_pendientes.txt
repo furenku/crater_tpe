@@ -1,6 +1,5 @@
 - Metabox taller no guarda
 
-- Autopublicación: corregir titular interactivo
 
 - Plantilla Suscripciones
    - Crear 3 productos-suscripción

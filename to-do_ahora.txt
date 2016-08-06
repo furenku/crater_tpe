@@ -1,1 +1,1 @@
-- Autopublicación: cambiar diseño talleres a algo horizontal mas compacto
+- Autopublicación: corregir titular interactivo
