@@ -75,19 +75,19 @@ function mostrar_hijas( $pagina ) {
 
    ?>
 
-   <article class="columns <?php echo $columnas; ?> p5 h_100 rel">
+   <article class="columns <?php echo $columnas; ?> p5 <?php echo $profundidad < 2 ? 'h_100' : 'h_50vh';  ?> rel mb2">
 
    <?php
 
       $heading = 'h' . ( $profundidad + 1 );
 
-      echo '<'.$heading.'>';
+      echo '<'.$heading.' class="p5">';
          echo $titulo;
       echo '</'.$heading.'>';
 
    ?>
 
-   <div class="pagina_hija-imagen-extracto p0 m0 <?php echo $profundidad == 2 ? " h_30vh " : ""; ?>">
+   <div class="pagina_hija-imagen-extracto p0 m0 <?php echo $profundidad == 2 ? " h_10vh " : "h_20vh"; ?>">
       <!-- <div class="vcenter h_a p0 "> -->
 
 
@@ -140,8 +140,8 @@ function mostrar_hijas( $pagina ) {
 
          ?>
 
-         <section class="extracto columns <?php echo $columnas_internas; ?> h_a p5">
-            <div class="vcenter h_a">
+         <section class="extracto columns <?php echo $columnas_internas; ?> h_100 p5">
+            <div class="vcenter h_a fontL">
                <?php echo $extracto; ?>
             </div>
          </section>
@@ -169,9 +169,11 @@ function mostrar_hijas( $pagina ) {
 
    <?php else :  ?>
 
-      <a href="<?php echo get_the_permalink($ID); ?>" class="button enlace p5 small-12 columns">
-         Ir a página
-      </a>
+      <section class="boton columns p5">
+         <a href="<?php echo get_the_permalink($ID); ?>" class="button enlace p5 small-12 columns">
+            Ver <?php echo apply_filters('the_title', $pagina_hija->post_title); ?>
+         </a>
+      </section>
 
    <?php endif; ?>
 

@@ -27,7 +27,7 @@ array(
 
 <section id="<?php echo $html_id; ?>" class="contenedor_titular_interactivo columns pt2 pb4 m0 ha">
 
-   <h1 class="titular_interactivo">Proyectos</h1>
+   <h1 class="titular_interactivo">Blog</h1>
 
    <?php get_template_part('secciones/02-inicio/00-boton-enlace-seccion'); ?>
 

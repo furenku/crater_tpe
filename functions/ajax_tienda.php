@@ -174,7 +174,7 @@ function clear_cart() {
 
 
 
-function cargar_coleccion( $nombre_coleccion ) {
+function cargar_coleccion( $nombre_coleccion, $posts_per_page = -1 ) {
 
 	$coleccion = array();
 
@@ -188,7 +188,16 @@ function cargar_coleccion( $nombre_coleccion ) {
 		$columnas_imagen 		= "columns small-4";
 		$columnas_texto 		= "columns small-8";
 	}
-	$q = new WP_Query( array( 'post_type' => 'product',  'cat' => $catID ) );
+	$q = new WP_Query( array(
+		'post_type' => 'product',
+		'posts_per_page' => $posts_per_page,
+
+		'tax_query'       => array(
+			'taxonomy' => 'product_cat',
+			'field' => 'id',
+			'terms' => array( $catID )
+		)
+	) );
 
 	if($q->have_posts()):
 
@@ -274,8 +283,8 @@ function cargar_coleccion_ajax() {
 	$ID = $_POST['id'];
 	$nombre_coleccion = $_POST['nombre_coleccion'];
 
-	$coleccion = cargar_coleccion( $ID, $nombre_coleccion );
-	// $coleccion['publicaciones'] = $publicaciones;
+	// $coleccion = cargar_coleccion( $ID, $nombre_coleccion );
+	$coleccion = cargar_coleccion( $nombre_coleccion );
 
 	die( json_encode( array('titulo'=>$nombre_coleccion, 'html'=>$coleccion) ) );
 

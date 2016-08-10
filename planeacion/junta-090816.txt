@@ -1,0 +1,37 @@
+lavalavalava
+
+Inicio
+
+- Listado Breve Novedades y/o Destacados
+- Blog
+- Luego el resto
+
+- Cambiar nombre "Catálogo" por "Tienda"
+
+- Añadir Novedades (pensar en un mejor nombre)
+
+- Omitir portada y pasar directo a tienda
+
+- Desplegar todos los productos al inicio
+
+- Este año no van a suceder Talleres
+
+- Está pensado traducirla
+
+- Métodos de Envío
+   - Un precio para c/u: Local / Nacional / Extranjero
+
+Colecciones
+- Son 3
+
+
+Filtros
+
+- Por colección
+- Por autor
+- Por Editorial
+
+
+tareas:
+
+pedir a Andy resolver qué filtros necesitan
