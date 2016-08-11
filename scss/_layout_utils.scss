@@ -2066,7 +2066,7 @@ $lista_colores: (
 
 
 	   .color_#{nth($value, 1)} {
-			& {
+			&,* {
 				color: nth($value, 2) !important;
 			}
 	   }

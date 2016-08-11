@@ -9,7 +9,7 @@
          <div id="cabecera-logotipo" class="h_5em mb1">
             <a href="<?php echo get_site_url(); ?>">
                <div class="imagen imgLiquid imgLiquidNoFill">
-                  <img src="http://fakeimg.pl/300x100" alt="" />
+                  <img src="http://fakeimg.pl/200x100/f8f8f8/bbb?text=lavalavalava" alt="" />
                </div>
             </a>
          </div>

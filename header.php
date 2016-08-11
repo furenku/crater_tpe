@@ -39,7 +39,7 @@ if(
    <!-- section#portada -->
    <?php if( ! is_single() ) : ?>
    <section id="portada" class="row expanded p0 m0 h_a">
-      <div id="portada-variable">
+      <div id="portada-variable" class="columns p0">
          <?php include_once 'secciones/01-portada/00-portada_variable.php'; ?>
       </div>
 

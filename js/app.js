@@ -26,7 +26,7 @@ $(document).ready(function(){
    boton_scroll_portada();
    function boton_scroll_portada() {
       $('#inicio-portada-ver-mas').click(function(){
-         $('body,html').animate({ scrollTop:$(window).height() }, 600);
+         $('body,html').animate({ scrollTop:$('#inicio-portada').innerHeight() }, 600);
       })
    }
    interaccion_menu();
