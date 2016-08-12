@@ -22,8 +22,68 @@ Interacción menú:
 */
 $(document).ready(function(){
 
+   borrar_carrito();
 
+   actualizar_carrito();
+
+   interaccion_productos();
+
+   interaccion_colecciones();
+
+});
+
+
+function borrar_carrito() {
+
+   var ajaxData = {
+      type:"POST",
+      url: tpe_ajax.ajaxurl,
+      data: {
+         action: 'clear_cart'
+      },
+      dataType: 'json',
+      success: function( resultado ) {}
+   }
+
+   $.ajax(ajaxData);
+
+   return false;
+
+}
+
+function actualizar_carrito() {
+
+   var ajaxData = {
+      type:"POST",
+      url: tpe_ajax.ajaxurl,
+      data: {
+         action: 'info_carrito'
+      },
+      dataType: 'json',
+      success: function( resultado ) {
+         // console.log( resultado );
+         $('#ecommerce-nav-carrito-total').html( resultado.total );
+         $('#ecommerce-nav-carrito-cantidad span.cantidad').html( resultado.cantidad );
+      }
+   }
+
+   $.ajax(ajaxData);
+
+}
+
+
+
+
+function habilitar_cantidad_ejemplares( id ){
+   console.log( "habilitar", id )
+}
+
+
+
+function interaccion_productos() {
    if( $('.publicacion-comprar').length > 0 ) {
+
+      $('.publicacion-comprar').unbind('click');
 
       $('.publicacion-comprar').click(function(){
 
@@ -45,45 +105,12 @@ $(document).ready(function(){
 
          $.ajax(ajaxData);
 
+         return false;
+
       });
 
    }
-
-
-   interaccion_colecciones();
-
-});
-
-function actualizar_carrito() {
-
-   var ajaxData = {
-      type:"POST",
-      url: tpe_ajax.ajaxurl,
-      data: {
-         action: 'info_carrito'
-      },
-      dataType: 'json',
-      success: function( resultado ) {
-         // console.log( resultado );
-         $('#ecommerce-nav-carrito-total').html( resultado.total );
-         $('#ecommerce-nav-carrito-cantidad').html( resultado.cantidad );
-      }
-   }
-
-   $.ajax(ajaxData);
-
 }
-
-
-
-
-function habilitar_cantidad_ejemplares( id ){
-   console.log( "habilitar", id )
-}
-
-
-
-
 
 var colecciones;
 function interaccion_colecciones() {
@@ -107,6 +134,7 @@ function interaccion_colecciones() {
                   $('#catalogo-colecciones .elementos').animate({opacity:1},400);
                   catalogo_sliders();
                   $('#catalogo-colecciones .titulo').animate({opacity:1},400);
+
                },150);
 
             });
@@ -162,6 +190,8 @@ function activar_colecciones(e) {
             });
 
             $('#catalogo-colecciones .elementos').animate({opacity:1});
+
+            interaccion_productos();
 
          });
       }
