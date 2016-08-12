@@ -6,7 +6,7 @@ $inicio = get_page_by_title("Inicio");
    <div class="w_100 h_100 abs z-1 imgLiquid imgLiquidFill">
       <?php echo get_the_post_thumbnail( $inicio->ID, 'full' ); ?>
    </div>
-   <div class="cortina_oscura w_100 h_100 abs z-1"></div>
+   <!-- <div class="cortina_oscura w_100 h_100 abs z-1"></div> -->
 
    <div class="columns columns medium-9 large-10 end h_100 reñ">
       <div class="columns medium-6 p5">
@@ -21,7 +21,7 @@ $inicio = get_page_by_title("Inicio");
             <h2 id="inicio-portada-nombre_sitio" class="columns p0 mb2 color_blanco txsh1 text-center">
                <?php echo bloginfo( 'description' ); ?>
             </h2>
-            <div class="contenido columns h_a p0 pr1 text-left fontL color_blanco txsh1 color_negro_bg p5 pt1 pb1">
+            <div class="contenido columns h_a p0 pr1 text-left fontL color_blanco color_negro_bg p5 pt1 pb1">
                <?php echo apply_filters('the_content', $inicio->post_content ); ?>
             </div>
             <div class="columns pt2 text-center">

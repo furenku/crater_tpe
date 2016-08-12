@@ -143,76 +143,34 @@ function interaccion_productos() {
 // sliders de catalogo inicio
 function inicio_catalogo_sliders() {
 
-   // colecciones slider
-   $('#inicio_catalogo_colecciones').slick({
-      dots: false,
+   $('#inicio-novedades').slick({
+
+      dots: true,
       arrows: true,
       infinite: true,
-      speed: 500,
+      speed: 800,
       // fade: true,
       centerMode: true,
-      centerPadding: '7vw',
+      centerPadding: '3vw',
       autoplay: true,
       autoplaySpeed: 3000,
       // cssEase: 'swing',
-      slidesToShow: 1,
-      slidesToScroll: 1,
+      slidesToShow: 3,
+      slidesToScroll: 3,
       responsive: [
-
          {
             breakpoint: 768,
             settings: {
-               centerPadding: '1vw',
+               slidesToShow: 2,
+               slidesToScroll: 2,
+               centerPadding: '2vw',
             }
-         }
-      ]
-   });
-
-   // ediciones unicas slider
-   $('#inicio-catalogo-ediciones-unicas').slick({
-      dots: false,
-      arrows: true,
-      infinite: true,
-      speed: 500,
-      // fade: true,
-      centerMode: true,
-      centerPadding: '7vw',
-      autoplay: true,
-      autoplaySpeed: 3000,
-      // cssEase: 'swing',
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      responsive: [
-
+         },
          {
-            breakpoint: 768,
+            breakpoint: 640,
             settings: {
-               centerPadding: '1vw',
-            }
-         }
-      ]
-   });
-
-   // proyectos especiales slider
-   $('#inicio-catalogo-proyectos-especiales').slick({
-
-      dots: false,
-      arrows: true,
-      infinite: true,
-      speed: 500,
-      // fade: true,
-      centerMode: true,
-      centerPadding: '7vw',
-      autoplay: true,
-      autoplaySpeed: 3000,
-      // cssEase: 'swing',
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      responsive: [
-
-         {
-            breakpoint: 768,
-            settings: {
+               slidesToShow: 1,
+               slidesToScroll: 1,
                centerPadding: '1vw',
             }
          }
