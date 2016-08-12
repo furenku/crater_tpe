@@ -18,7 +18,6 @@ get_template_part("secciones/02-inicio/02-catalogo");
 
 get_template_part("secciones/02-inicio/03-autopublicacion");
 
-
 get_template_part("secciones/02-inicio/05-suscripciones");
 
 get_template_part("secciones/02-inicio/07-donde-comprar");

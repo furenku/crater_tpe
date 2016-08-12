@@ -83,13 +83,7 @@ $html_id = preg_replace('/[^A-Za-z0-9\-]/', '', $html_id );
 
       </div>
 
-
-      </div>
-
-
    </div>
-
-
 
 
 </section>

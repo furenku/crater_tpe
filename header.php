@@ -57,27 +57,6 @@ if(
 
    <div id="area-stickies" class="row expanded h_a rel">
 
-      <header id="cabecera" class="row expanded h_5em" data-sticky-container>
-         <div class="sticky w_100 color_blanco_bg z1 h_5em" data-sticky data-anchor="area-stickies" data-margin-top="0">
-
-            <div id="cabecera-titular" class="columns <?php echo $is_ecommerce ? 'medium-5 large-4' : ''; ?>"></div>
-
-            <?php
-            if( $is_ecommerce ):
-            ?>
-
-            <nav id="menu-ecommerce" class="columns <?php echo $is_ecommerce ? 'medium-5 large-6 end' : ''; ?> h_5vh color_blanco_bg" data-sticky-container>
-               <div class="sticky columns h_a p3" data-sticky data-anchor="area-stickies" data-stick-to="top">
-                  <?php get_template_part('secciones/00-general/menu-ecommerce'); ?>
-               </div>
-            </nav>
-
-            <?php endif; ?>
-
-         </div>
-
-      </header>
-
 
       <!-- #menu-y-principal.row.h_85vh.scroll_h -->
 
@@ -86,3 +65,24 @@ if(
 
          <!-- main#principal.columns.small-12.medium-9.large-10 -->
          <main id="principal" class="columns small-12 medium-9 large-10">
+
+            <header id="cabecera" class="row expanded h_5em" data-sticky-container>
+               <div class="sticky w_100 color_blanco_bg z1 h_5em" data-sticky data-anchor="area-stickies" data-margin-top="0">
+
+                  <div id="cabecera-titular" class="columns <?php echo $is_ecommerce ? 'medium-5 large-4' : ''; ?>"></div>
+
+                  <?php
+                  if( $is_ecommerce ):
+                     ?>
+
+                     <nav id="menu-ecommerce" class="columns <?php echo $is_ecommerce ? 'medium-5 large-6 end' : ''; ?> h_5vh color_blanco_bg" data-sticky-container>
+                        <div class="sticky columns h_a p3" data-sticky data-anchor="area-stickies" data-stick-to="top">
+                           <?php get_template_part('secciones/00-general/menu-ecommerce'); ?>
+                        </div>
+                     </nav>
+
+                  <?php endif; ?>
+
+               </div>
+
+            </header>

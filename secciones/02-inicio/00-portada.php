@@ -1,7 +1,7 @@
 <?php
 $inicio = get_page_by_title("Inicio");
 ?>
-<section id="inicio-portada" class="columns h_70vh p0 m0 rel">
+<section id="inicio-portada" class="columns h_75vh p0 m0 rel">
 
    <div class="w_100 h_100 abs z-1 imgLiquid imgLiquidFill">
       <?php echo get_the_post_thumbnail( $inicio->ID, 'full' ); ?>
