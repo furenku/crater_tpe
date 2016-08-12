@@ -11,14 +11,14 @@ $inicio = get_page_by_title("Inicio");
    <div class="columns columns medium-9 large-10 end h_100 reñ">
       <div class="columns medium-6 p5">
          <div class="vcenter h_a text-center">
-            <h1 id="inicio-portada-nombre_sitio" class="fontXXXL mb1 color_blanco txsh1">
+            <h1 id="inicio-portada-nombre_sitio" class="fontXXXL mb1 color_blanco txsh">
                <?php echo bloginfo( 'name' ); ?>
             </h1>
          </div>
       </div>
       <div class="columns medium-6 p0">
          <div class="vcenter columns h_a p0">
-            <h2 id="inicio-portada-nombre_sitio" class="columns p0 mb2 color_blanco txsh1 text-center">
+            <h2 id="inicio-portada-nombre_sitio" class="columns p0 mb2 color_blanco txsh text-center">
                <?php echo bloginfo( 'description' ); ?>
             </h2>
             <div class="contenido columns h_a p0 pr1 text-left fontL color_blanco color_negro_bg p5 pt1 pb1">
