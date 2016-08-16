@@ -18,13 +18,15 @@ $link_catalogo = get_the_permalink( get_page_by_title("Catálogo")->ID );
          ?>
          <a href="<?php echo $link_publicacion; ?>">
 
-            <header class="columns h_70">
-               <section class="columns imagen h_80 imgLiquid imgLiquidNoFill">
+            <header class="columns h_70 p0">
+               <section class="columns imagen h_80 imgLiquid imgLiquidNoFill mb1">
                   <?php echo $producto['imagen']; ?>
                </section>
-               <h6 class="titulo h_20 fontS bold">
-                  <?php echo $producto['titulo']; ?>
-               </h6>
+               <div class="titulo h_20 p0 pt2 mt1">
+                  <h6 class="  fontS bold pt2  mt1">
+                     <?php echo $producto['titulo']; ?>
+                  </h6>
+               </div>
             </header>
             <div class="columns producto-texto h_30 p0">
                <div class="extracto columns h_70 h_sm_40 m0 p3 pl0 pr0 fontS">

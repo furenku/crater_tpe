@@ -21,7 +21,7 @@ $paginas_hijas = get_pages( array( 'child_of' => $pagina_principal->ID ) );
             Catálogo
          </h1>
    </div>
-   <div class="contenido columns medium-6 large-7 large-offset-1 end h_a p2 pt0 pb2 mb1 fontXL mt2">
+   <div class="contenido columns medium-6 large-7 large-offset-1 end h_a p2 pt0 pb2 mb1 fontL mt2">
       <?php echo apply_filters( 'the_content', $pagina_principal->post_content ); ?>
    </div>
 
@@ -47,8 +47,8 @@ $paginas_hijas = get_pages( array( 'child_of' => $pagina_principal->ID ) );
 
                   <div class="texto absUpL z1 p5 txsh">
                      <div class="vcenter h_a">
-                        <h5 class="p5 fontXL m0"><?php echo $titulo; ?></h5>
-                        <div class="extracto fontL ls2 p5 pt0 pr2 text-center"><?php echo $texto; ?></div>
+                        <h3 class="p5 m0 pt0"><?php echo $titulo; ?></h3>
+                        <div class="extracto fontL ls2 p0 text-center"><?php echo $texto; ?></div>
                      </div>
                   </div>
                </div>

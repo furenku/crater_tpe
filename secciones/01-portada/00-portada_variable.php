@@ -4,15 +4,8 @@ if( is_page('Inicio') ) {
 
    get_template_part('secciones/02-inicio/00-portada');
 
-}else if( is_page('Carrito') ) {
+}elseif( is_page() ) {
 
-   get_template_part('secciones/10-tienda/carrito');
-
-}  else if( is_page('Realizar compra') ) {
-
-   get_template_part('secciones/10-tienda/realizar_compra');
-
-} else if( is_page() ) {
    $parents = get_post_ancestors( get_the_ID() );
    $parent = $parents[0];
    $parent = get_page($parent);

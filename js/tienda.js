@@ -22,7 +22,7 @@ Interacción menú:
 */
 $(document).ready(function(){
 
-   borrar_carrito();
+//   borrar_carrito();
 
    actualizar_carrito();
 
