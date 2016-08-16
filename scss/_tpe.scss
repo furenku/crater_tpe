@@ -41,8 +41,8 @@ li {
 
 .contenido {
 
-   & > iframe, & >img, .wp-caption {
-      width: 100%;
+   & > iframe, & >img, .wp-caption, .wp-caption img {
+      width: 100% !important;
       margin: $spacing * 2 0;
    }
 
